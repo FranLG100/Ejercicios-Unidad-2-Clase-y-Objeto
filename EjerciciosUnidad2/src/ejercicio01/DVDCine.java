@@ -1,0 +1,165 @@
+package ejercicio01;
+
+public class DVDCine {
+
+	/**
+	 * <h2>Clase DVDCine. Se utiliza para crear fichas de películas.</h2>*/
+	
+	/**
+	 * Atributo Título de la película (en español)
+	 */
+	private String titulo;
+	/**
+	 * Atributo Título original de la película
+	 */
+	private String tituloOriginal;
+	/**
+	 * Atributo Nombre del director/es de la película
+	 */
+	private String director;
+	/**
+	 * Atributo Reparto de actores de la película
+	 */
+	private String reparto;
+	/**
+	 * Atributo Género de la película
+	 */
+	private String genero;
+	/**
+	 * Atributo Duración de la película
+	 */
+	private int duracion;
+	/**
+	 * Atributo Descripción de la película
+	 */
+	private String descripcion;
+
+	/**
+	 * Constructor por defecto. Crea películas con los valores inicializados por defecto.
+	 */
+	public DVDCine() {
+		titulo = "Amadeus";
+		tituloOriginal = "Amadeus";
+		director = "Milos Forman";
+		reparto = "Murray Abraham y Tom Hulce";
+		genero = "Drama";
+		duracion = 161;
+		descripcion = "";
+	}
+	
+	/**
+	 * Constructor con 7 parámetros. Crea la ficha de una película
+	 * @param titulo Título de la película (en español)
+	 * @param tituloOriginal Título original de la película
+	 * @param director Nombre del director/es de la película
+	 * @param reparto Reparto de actores de la película
+	 * @param genero Género de la película
+	 * @param duracion Duración de la película
+	 * @param descripcion Descripción o breve sinopsis de la película
+	 */
+	public DVDCine(String titulo, String tituloOriginal, String director, String reparto, String genero, int duracion, String descripcion) {
+		this.titulo=titulo;
+		this.tituloOriginal=tituloOriginal;
+		this.director=director;
+		this.reparto=reparto;
+		this.genero=genero;
+		this.duracion=duracion;
+		this.descripcion=descripcion;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getTituloOriginal() {
+		return tituloOriginal;
+	}
+
+	public void setTituloOriginal(String tituloOriginal) {
+		this.tituloOriginal = tituloOriginal;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+
+	public String getReparto() {
+		return reparto;
+	}
+
+	public void setReparto(String reparto) {
+		this.reparto = reparto;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public int getDuracion() {
+		return duracion;
+	}
+
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	/**
+	 * Método que imprime por pantalla la ficha de la película
+	 */
+	public void muestraDVDCine() {
+		System.out.println(titulo+" ("+tituloOriginal+")"+" de: "+director);
+		System.out.println("Con: "+reparto);
+		System.out.println(genero+" - "+duracion+"min");
+		System.out.println("Resumen: "+descripcion);
+	}
+	
+	/**
+	 * Método que indica si una película pertecene al género 'Thriller'
+	 * @return <ul>
+	 * 			<li>true: La película tiene como género 'Thriller'
+	 * 			<li>false: La película tiene como género otro distinto a 'Thriller'
+	 * 			</ul>
+	 */
+	public boolean esThriller() {
+		return genero.equalsIgnoreCase("thriller");
+	}
+	
+	/**
+	 * Método que indica si una película posee resumen o no
+	 * @return <ul>
+	 * 			<li>true: La película tiene resumen
+	 * 			<li>false: La película no tiene resumen
+	 * 			</ul>
+	 */
+	public boolean tieneResumen() {
+		return !descripcion.isEmpty();
+	}
+	
+	/**
+	 * Método que indica la duración de la película en minutos
+	 * @return duración en minutos de la película
+	 */
+	public String muestraDuracion() {
+		return duracion+" min";
+	}
+}

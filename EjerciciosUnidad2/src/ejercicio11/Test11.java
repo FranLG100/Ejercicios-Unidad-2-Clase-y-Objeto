@@ -13,12 +13,20 @@ public class Test11 {
 		Triangulo[] vt1= {t1,t2,t3};
 		Triangulo[] vt2= {t1,t4,t2};
 		
+		//Comprobación de los métodos
+		/*Como vemos, los triángulos son iguales sin importar el orden de sus lados*/
 		System.out.println(t1.compareTo_Triangulos(t1, t3));
-		System.out.println(t1.compareTo_Triangulos(t1, t4));
+		/*En este caso, son desiguales*/
+		System.out.println(t1.compareTo_Triangulos(t1, t4)); 
+		/*Estos tres triángulos son iguales, solo cambia el orden de sus lados*/
 		System.out.println(t1.compareTo_VTriangulos(vt1));
+		/*Estos, no lo son*/
 		System.out.println(t1.compareTo_VTriangulos(vt2));
+		/*Equilátero*/
 		System.out.println(t4.tipo_Triangulo());
+		/*Isósceles*/
 		System.out.println(t5.tipo_Triangulo());
+		/*Escaleno*/
 		System.out.println(t1.tipo_Triangulo());
 	}
 

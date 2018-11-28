@@ -8,7 +8,12 @@ public class Triangulo {
 	private double long_lado2;
 	private double long_lado3;
 	
-	
+	/**
+	 * Constructor de la clase Triangulo con tres parámetros
+	 * @param long_lado1 Longitud del primer lado del tríangulo
+	 * @param long_lado2 Longitud del segundo lado del tríangulo
+	 * @param long_lado3 Longitud del tercer lado del tríangulo
+	 * */
 	public Triangulo(double long_lado1, double long_lado2, double long_lado3) {
 		super();
 		this.long_lado1 = long_lado1;
@@ -53,7 +58,13 @@ public class Triangulo {
 	}
 
 
-
+	/**
+	 * Método que compara dos triángulos
+	 * @return <ul>
+	 * 			<li>true Si los tres lados de ambos triángulos son iguales (no importa el orden)
+	 * 			<li>false Si los dos triángulos no tienen los tres lados iguales entre ellos
+	 * 			</ul>
+	 * */
 	public boolean compareTo_Triangulos(Triangulo a, Triangulo b) {
 		double[] t1= {a.getLong_lado1(), a.getLong_lado2(), a.getLong_lado3()};
 		double[] t2= {b.getLong_lado1(), b.getLong_lado2(), b.getLong_lado3()};
@@ -65,6 +76,14 @@ public class Triangulo {
 		
 	}
 	
+	
+	/**
+	 * Método que compara un arreglo de triángulos
+	 * @return <ul>
+	 * 			<li>true Si los tres lados de todos los triángulos son iguales (no importa el orden)
+	 * 			<li>false Si todos los triángulos no tienen los tres lados iguales entre ellos
+	 * 			</ul>
+	 * */
 	public boolean compareTo_VTriangulos(Triangulo v[]) {
 		boolean comprobador=true;
 		for (int i = 0; i < v.length; i++) {
@@ -77,6 +96,14 @@ public class Triangulo {
 		return comprobador;
 	}
 	
+	/**
+	 * Método que retorna el tipo de triangulo ante el cual nos encontramos
+	 * @return <ul>
+	 * 			<li>1 Triángulo Equilátero
+	 * 			<li>2 Triángulo Isósceles
+	 * 			<li>3 Triángulo Escaleno
+	 * 			</ul>
+	 * */
 	public int tipo_Triangulo() {
 		if(long_lado1==long_lado2 && long_lado1==long_lado3)
 			return 1;

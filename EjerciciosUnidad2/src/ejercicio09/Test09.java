@@ -11,6 +11,7 @@ public class Test09 {
 		Docente d=new Docente("García", "Ramón", "Hombre", 28822882, 4, "Profesor", "Comunicación", 6, 8);
 		Estudiante e=new Estudiante("García", "Ramón", "Hombre", 28822882, 1231, "Alumno", 800, "C.P. Cristóbal Colón");
 		
+		//Test sencillo para probar que funcionan sus métodos.
 		System.out.println(p.toString());
 		System.out.println();
 		System.out.println(d.toString());

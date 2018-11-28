@@ -8,6 +8,17 @@ public class Estudiante extends Persona{
 	private String colegio;
 	
 
+	/**
+	 * Constructor de Estudiante, con nueve parámetros
+	 * @param apellidos Apellidos del estudiante
+	 * @param nombre Nombre del estudiante
+	 * @param sexo Género del estudiante
+	 * @param dni Número identificativo del estudiante
+	 * @param codigo Código del estudiante
+	 * @param categoria Categoría del estudiante
+	 * @param pagoPensiones Pago de pensiones del estudiante
+	 * @param colegio Colegio del cual procede el estudiante
+	 * */
 	public Estudiante(String apellidos, String nombre, String sexo, int dni, int codigo, String categoria,
 			int pagoPensiones, String colegio) {
 		super(apellidos, nombre, sexo, dni);
@@ -57,6 +68,12 @@ public class Estudiante extends Persona{
 		this.colegio = colegio;
 	}
 	
+	/**
+	 * Método que devuelve un pago parcial del Estudiante, teniendo en cuenta su promedio
+	 * de pago de pensiones
+	 * @param promedio Promedio (porcentaje) del pago de pensiones
+	 * @return Pago parcial del Estudiante
+	 * */
 	public double pagoParcial(double promedio) {
 		double pago=0;
 		if(promedio<13)
@@ -69,6 +86,10 @@ public class Estudiante extends Persona{
 	}
 
 
+	/**
+	 * Método que devuelve los datos del Estudiante
+	 * @return Ficha completa con todos los datos del estudiante
+	 * */
 	@Override
 	public String toString() {
 		return super.toString()+"\nCódigo: "+codigo+"\nCategoria: "+categoria+"\nPago Pensiones: "+pagoPensiones+"\nColegio Anterior: "+colegio;

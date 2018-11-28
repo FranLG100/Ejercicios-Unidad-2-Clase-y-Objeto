@@ -15,9 +15,18 @@ public class Docente extends Persona{
 	
 	
 	
-	/**
-	 * 
+	 /**
+	 * Constructor de Docente, con nueve parámetros
+	 * @param apellidos Apellidos del docente
+	 * @param nombre Nombre del docente
+	 * @param sexo Género del docente
+	 * @param dni Número identificativo del docente
+	 * @param categoria Categoria del docente
+	 * @param estudios Estudios de posgrado que posee del docente
+	 * @param horas Número de horas extra que ha realizado el docente este mes
+	 * @param pago Cantidad pagada por hora extra al profesor
 	 * */
+
 	public Docente(String apellidos, String nombre, String sexo, int dni, int codigo, String categoria, String estudios, int horas, double pago) throws IOException {
 		super(apellidos,nombre,sexo,dni);
 		if(codigo<0) {
@@ -81,10 +90,18 @@ public class Docente extends Persona{
 		this.pago = pago;
 	}
 	
+	/**
+	 * Método que calcula cuánto debe percibir el docente por las horas extras trabajadas
+	 * @return Cantidad de dinero que debe percibir el docente por sus horas extra
+	 * */
 	public double pagoParcial() {
 		return horas*pago;
 	}
 	
+	/**
+	 * Método que devuelve los datos del Docente
+	 * @return Ficha completa con todos los datos del docente
+	 * */
 	public String toString() {
 		return super.toString()+"\nCódigo: "+codigo+"\nCategoria: "+categoria+"\nEstudios de Posgrado: "+estudios+"\nHoras de clase: "+horas+"\nPago por hora: "+pago;
 	}

@@ -1,5 +1,7 @@
 package ejercicio09;
 
+import java.io.IOException;
+
 public class Estudiante extends Persona{
 
 	private int codigo;
@@ -18,14 +20,19 @@ public class Estudiante extends Persona{
 	 * @param categoria Categoría del estudiante
 	 * @param pagoPensiones Pago de pensiones del estudiante
 	 * @param colegio Colegio del cual procede el estudiante
+	 * @throws IOException 
 	 * */
 	public Estudiante(String apellidos, String nombre, String sexo, int dni, int codigo, String categoria,
-			int pagoPensiones, String colegio) {
+			int pagoPensiones, String colegio) throws IOException {
 		super(apellidos, nombre, sexo, dni);
 		this.codigo = codigo;
-		this.categoria = categoria;
+		this.categoria = amadeus.compruebaTexto(categoria);
+		if(pagoPensiones<0) {
+			System.out.println("El pago de pensiones no puede ser negativo, vuelva a introducir");
+			pagoPensiones=amadeus.controlaIntPositivo();
+		}
 		this.pagoPensiones = pagoPensiones;
-		this.colegio = colegio;
+		this.colegio = colegio; //He dejado que sí pueda ponerse en blanco
 	}
 
 
@@ -44,8 +51,8 @@ public class Estudiante extends Persona{
 	}
 
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
+	public void setCategoria(String categoria) throws IOException {
+		this.categoria = amadeus.compruebaTexto(categoria);
 	}
 
 
@@ -54,7 +61,11 @@ public class Estudiante extends Persona{
 	}
 
 
-	public void setPagoPensiones(int pagoPensiones) {
+	public void setPagoPensiones(int pagoPensiones) throws IOException {
+		if(pagoPensiones<0) {
+			System.out.println("El pago de pensiones no puede ser negativo, vuelva a introducir");
+			pagoPensiones=amadeus.controlaIntPositivo();
+		}
 		this.pagoPensiones = pagoPensiones;
 	}
 

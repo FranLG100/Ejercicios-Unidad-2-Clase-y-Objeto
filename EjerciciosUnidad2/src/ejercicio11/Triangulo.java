@@ -1,9 +1,13 @@
 package ejercicio11;
 
+import java.io.IOException;
 import java.util.Arrays;
+
+import utilesFran.Amadeus;
 
 public class Triangulo {
 	
+	private Amadeus amadeus=new Amadeus();
 	private double long_lado1;
 	private double long_lado2;
 	private double long_lado3;
@@ -13,23 +17,39 @@ public class Triangulo {
 	 * @param long_lado1 Longitud del primer lado del tríangulo
 	 * @param long_lado2 Longitud del segundo lado del tríangulo
 	 * @param long_lado3 Longitud del tercer lado del tríangulo
+	 * @throws IOException 
 	 * */
-	public Triangulo(double long_lado1, double long_lado2, double long_lado3) {
-		super();
+	public Triangulo(double long_lado1, double long_lado2, double long_lado3) throws IOException {
+		if(long_lado1<0) {
+			System.out.println("El lado uno no puede ser negativo. Reintroduzca dato");
+			long_lado1=amadeus.controlaDoublePositivo();
+		}
 		this.long_lado1 = long_lado1;
+		if(long_lado2<0) {
+			System.out.println("El lado dos no puede ser negativo. Reintroduzca dato");
+			long_lado2=amadeus.controlaDoublePositivo();
+		}
 		this.long_lado2 = long_lado2;
+		if(long_lado3<0) {
+			System.out.println("El lado tres no puede ser negativo. Reintroduzca dato");
+			long_lado3=amadeus.controlaDoublePositivo();
+		}
 		this.long_lado3 = long_lado3;
 	}
 	
 	
 	
-	public double getLong_lado1() {
+	public double getLong_lado1(){
 		return long_lado1;
 	}
 
 
 
-	public void setLong_lado1(double long_lado1) {
+	public void setLong_lado1(double long_lado1) throws IOException {
+		if(long_lado1<0) {
+			System.out.println("El lado uno no puede ser negativo. Reintroduzca dato");
+			long_lado1=amadeus.controlaDoublePositivo();
+		}
 		this.long_lado1 = long_lado1;
 	}
 
@@ -41,7 +61,11 @@ public class Triangulo {
 
 
 
-	public void setLong_lado2(double long_lado2) {
+	public void setLong_lado2(double long_lado2) throws IOException {
+		if(long_lado2<0) {
+			System.out.println("El lado dos no puede ser negativo. Reintroduzca dato");
+			long_lado2=amadeus.controlaDoublePositivo();
+		}
 		this.long_lado2 = long_lado2;
 	}
 
@@ -53,7 +77,11 @@ public class Triangulo {
 
 
 
-	public void setLong_lado3(double long_lado3) {
+	public void setLong_lado3(double long_lado3) throws IOException {
+		if(long_lado3<0) {
+			System.out.println("El lado tres no puede ser negativo. Reintroduzca dato");
+			long_lado3=amadeus.controlaDoublePositivo();
+		}
 		this.long_lado3 = long_lado3;
 	}
 

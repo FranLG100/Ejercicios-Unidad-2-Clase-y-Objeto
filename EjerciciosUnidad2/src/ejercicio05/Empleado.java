@@ -1,7 +1,12 @@
 package ejercicio05;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class Empleado {
 	
+	private Amadeus amadeus=new Amadeus();
 	private int dni;
 	private double sueldoBase;
 	private double pagoHoraExtra;
@@ -19,8 +24,13 @@ public class Empleado {
 	/**
 	 * Constructor con un parámetro de la clase empleado. Crea un empleado con su número identificativo.
 	 * @param dni Número de identidad del empleado.
+	 * @throws IOException 
 	 * */
-	public Empleado(int dni) {
+	public Empleado(int dni) throws IOException {
+		if(dni<0) {
+			System.out.println("El DNI no puede ser negativo. Introduzca otro");
+			dni=amadeus.controlaIntPositivo();
+		}
 		this.dni = dni;
 	}
 
@@ -28,7 +38,11 @@ public class Empleado {
 		return dni;
 	}
 
-	public void setDni(int dni) {
+	public void setDni(int dni) throws IOException {
+		if(dni<0) {
+			System.out.println("El DNI no puede ser negativo. Introduzca otro");
+			dni=amadeus.controlaIntPositivo();
+		}
 		this.dni = dni;
 	}
 
@@ -36,7 +50,11 @@ public class Empleado {
 		return sueldoBase;
 	}
 
-	public void setSueldoBase(double sueldoBase) {
+	public void setSueldoBase(double sueldoBase) throws IOException {
+		if(sueldoBase<0) {
+			System.out.println("Su empleado debería cobrar algo. Introduzca otra cantidad");
+			sueldoBase=amadeus.controlaDoublePositivo();
+		}
 		this.sueldoBase = sueldoBase;
 	}
 
@@ -44,7 +62,11 @@ public class Empleado {
 		return pagoHoraExtra;
 	}
 
-	public void setPagoHoraExtra(double pagoHoraExtra) {
+	public void setPagoHoraExtra(double pagoHoraExtra) throws IOException {
+		if(pagoHoraExtra<0) {
+			System.out.println("Su empleado debería cobrar algo por las horas extra. Introduzca otra cantidad");
+			pagoHoraExtra=amadeus.controlaDoublePositivo();
+		}
 		this.pagoHoraExtra = pagoHoraExtra;
 	}
 
@@ -52,7 +74,11 @@ public class Empleado {
 		return horasExtra;
 	}
 
-	public void setHorasExtra(int horasExtra) {
+	public void setHorasExtra(int horasExtra) throws IOException {
+		if(horasExtra<0) {
+		System.out.println("Introduzca un número de horas positiva");
+		horasExtra=amadeus.controlaIntPositivo();
+		}
 		this.horasExtra = horasExtra;
 	}
 
@@ -60,19 +86,15 @@ public class Empleado {
 		return irpf;
 	}
 
-	public void setIrpf(double irpf) {
-		if(irpf>100) {
-			irpf=100;
-			System.out.println("El valor no puede ser más de 100, se pondrá a 100 por defecto");
-		}
-		if(irpf<0)
-		{
-			irpf=0;
-			System.out.println("El valor no puede ser menos de 0, se pondrá a 0 por defecto");
+	public void setIrpf(double irpf) throws IOException {
+		if(irpf>100 || irpf<0) {
+			System.out.println("Valor no válido. Introduzca un valor entre 0 y 100");
+			irpf=amadeus.controlaDoublePorcentaje();
 		}
 		this.irpf = irpf;
 	}
 
+	
 	public boolean isCasado() {
 		return casado;
 	}
@@ -85,7 +107,11 @@ public class Empleado {
 		return nHijos;
 	}
 
-	public void setnHijos(int nHijos) {
+	public void setnHijos(int nHijos) throws IOException {
+		if(nHijos<0) {
+			System.out.println("No puede tener hijos negativos. Introduzca otro valor");
+			nHijos=amadeus.controlaIntPositivo();
+		}
 		this.nHijos = nHijos;
 	}
 	

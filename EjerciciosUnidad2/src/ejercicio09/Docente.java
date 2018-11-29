@@ -34,9 +34,17 @@ public class Docente extends Persona{
 			codigo=amadeus.controlaIntPositivo();
 		}
 		this.codigo = codigo;
-		this.categoria = categoria;
+		this.categoria = amadeus.compruebaTexto(categoria);
 		this.estudios = estudios;
+		if(horas<0) {
+			System.out.println("Error en las horas");
+			horas=amadeus.controlaIntPositivo();
+		}
 		this.horas = horas;
+		if(pago<0) {
+			System.out.println("Error en las horas");
+			pago=amadeus.controlaDoublePositivo();
+		}
 		this.pago = pago;
 	}
 
@@ -76,7 +84,11 @@ public class Docente extends Persona{
 	}
 
 
-	public void setHoras(int horas) {
+	public void setHoras(int horas) throws IOException {
+		if(horas<0) {
+			System.out.println("Error en las horas");
+			horas=amadeus.controlaIntPositivo();
+		}
 		this.horas = horas;
 	}
 
@@ -86,7 +98,11 @@ public class Docente extends Persona{
 	}
 
 
-	public void setPago(double pago) {
+	public void setPago(double pago) throws IOException {
+		if(pago<0) {
+			System.out.println("Error en las horas");
+			pago=amadeus.controlaDoublePositivo();
+		}
 		this.pago = pago;
 	}
 	

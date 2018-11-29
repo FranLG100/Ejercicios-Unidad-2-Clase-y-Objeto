@@ -10,7 +10,7 @@ public class Test04 {
 		// TODO Auto-generated method stub
 
 		Cafetera c1=new Cafetera();
-		Cafetera c2=new Cafetera(500,750);
+		Cafetera c2=new Cafetera(-500,-750);
 		Cafetera c3=new Cafetera(200);
 		Amadeus amadeus=new Amadeus();
 		int control=0;

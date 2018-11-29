@@ -35,7 +35,7 @@ public class Test03 {
 		System.out.println(c2.mostrarCuenta());
 		
 		//El usuario creará una cuenta ahora
-		System.out.println("Inrtoduzca su DNI");
+		System.out.println("Introduzca su DNI");
 		Cuenta c3=new Cuenta();
 		c3.setDni(amadeus.controlaIntPositivo()); //Sé que controla Int y no Longs, pero era por hacer una prueba rápida.
 		System.out.println("Introduzca saldo inicial");

@@ -4,8 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import utilesFran.Amadeus;
+
 public class Alumno {
 	
+	private Amadeus amadeus=new Amadeus();
 	private String nombreAlumno;
 	private int edad;
 	private Asignatura asignatura;
@@ -68,15 +71,19 @@ public class Alumno {
 		return nombreAlumno;
 	}
 
-	public void setNombreAlumno(String nombreAlumno) {
-		this.nombreAlumno = nombreAlumno;
+	public void setNombreAlumno(String nombreAlumno) throws IOException {
+		this.nombreAlumno = amadeus.compruebaTexto(nombreAlumno);
 	}
 
 	public int getEdad() {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
+	public void setEdad(int edad) throws IOException {
+		if(edad<0) {
+			System.out.println("La edad no puede ser negativa");
+			edad=amadeus.controlaIntPositivo();
+		}
 		this.edad = edad;
 	}
 

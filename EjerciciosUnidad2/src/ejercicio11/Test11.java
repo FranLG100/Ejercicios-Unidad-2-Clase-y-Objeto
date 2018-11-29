@@ -1,8 +1,10 @@
 package ejercicio11;
 
+import java.io.IOException;
+
 public class Test11 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
 		Triangulo t1=new Triangulo(2,4,6);

@@ -31,9 +31,10 @@ public class Vehiculo {
 	/**
 	 * Método que establece el modelo de Vehículo
 	 * @param modelo Modelo del vehículo
+	 * @throws IOException 
 	 */
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setModelo(String modelo) throws IOException {
+		this.modelo = amadeus.compruebaTexto(modelo);
 	}
 
 	/**

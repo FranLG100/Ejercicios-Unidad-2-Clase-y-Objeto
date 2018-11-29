@@ -1,7 +1,12 @@
 package ejercicio09;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class Persona {
 
+	protected Amadeus amadeus=new Amadeus();
 	protected String apellidos;
 	protected String nombre;
 	protected String sexo;
@@ -13,36 +18,45 @@ public class Persona {
 	 * @param nombre Nombre de la persona
 	 * @param sexo Género de la persona
 	 * @param dni Número identificativo de la persona
+	 * @throws IOException 
 	 * */
-	public Persona(String apellidos, String nombre, String sexo, int dni) {
-		this.apellidos = apellidos;
-		this.nombre = nombre;
-		this.sexo = sexo;
+	public Persona(String apellidos, String nombre, String sexo, int dni) throws IOException {
+		this.apellidos = amadeus.compruebaTexto(apellidos);
+		this.nombre = amadeus.compruebaTexto(nombre);
+		this.sexo = amadeus.compruebaTexto(sexo);
+		if(dni<0) {
+			System.out.println("El DNI no puede ser negativo, vuélvalo a introducir");
+			dni=amadeus.controlaIntPositivo();
+		}
 		this.dni = dni;
 	}
 	
 	public String getApellidos() {
 		return apellidos;
 	}
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setApellidos(String apellidos) throws IOException {
+		this.apellidos = amadeus.compruebaTexto(apellidos);
 	}
 	public String getNombre() {
 		return nombre;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre(String nombre) throws IOException {
+		this.nombre = amadeus.compruebaTexto(nombre);
 	}
 	public String getSexo() {
 		return sexo;
 	}
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
+	public void setSexo(String sexo) throws IOException {
+		this.sexo = amadeus.compruebaTexto(sexo);
 	}
 	public int getDni() {
 		return dni;
 	}
-	public void setDni(int dni) {
+	public void setDni(int dni) throws IOException {
+		if(dni<0) {
+			System.out.println("El DNI no puede ser negativo, vuélvalo a introducir");
+			dni=amadeus.controlaIntPositivo();
+		}
 		this.dni = dni;
 	}
 	

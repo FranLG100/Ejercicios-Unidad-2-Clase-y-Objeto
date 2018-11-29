@@ -82,40 +82,40 @@ public class DVDCine {
 		return titulo;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setTitulo(String titulo) throws IOException {
+		this.titulo = amadeus.compruebaTexto(titulo);
 	}
 
 	public String getTituloOriginal() {
 		return tituloOriginal;
 	}
 
-	public void setTituloOriginal(String tituloOriginal) {
-		this.tituloOriginal = tituloOriginal;
+	public void setTituloOriginal(String tituloOriginal) throws IOException {
+		this.tituloOriginal = amadeus.compruebaTexto(tituloOriginal);
 	}
 
 	public String getDirector() {
 		return director;
 	}
 
-	public void setDirector(String director) {
-		this.director = director;
+	public void setDirector(String director) throws IOException {
+		this.director = amadeus.compruebaTexto(director);
 	}
 
 	public String getReparto() {
 		return reparto;
 	}
 
-	public void setReparto(String reparto) {
-		this.reparto = reparto;
+	public void setReparto(String reparto) throws IOException {
+		this.reparto = amadeus.compruebaTexto(reparto);
 	}
 
 	public String getGenero() {
 		return genero;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setGenero(String genero) throws IOException {
+		this.genero = amadeus.compruebaTexto(genero);
 	}
 
 	public int getDuracion() {

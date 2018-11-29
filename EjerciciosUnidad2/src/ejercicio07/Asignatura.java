@@ -20,7 +20,7 @@ public class Asignatura {
 	 * @param nota Nota/Calificación que ha obtenido la asignatura, entre 0 y 10
 	 * */
 	public Asignatura(String nombre, double nota) throws NumberFormatException, IOException {
-		this.nombre=nombre;
+		this.nombre=amadeus.compruebaTexto(nombre);
 		this.nota=nota;
 		while(this.nota<0||this.nota>10) {
 			System.out.println("Introduzca una nota válida para la asignatura "+this.nombre);
@@ -32,15 +32,19 @@ public class Asignatura {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre(String nombre) throws IOException {
+		this.nombre = amadeus.compruebaTexto(nombre);
 	}
 
 	public double getNota() {
 		return nota;
 	}
 
-	public void setNota(double nota) {
+	public void setNota(double nota) throws IOException {
+		while(this.nota<0||this.nota>10) {
+			System.out.println("Introduzca una nota válida para la asignatura "+this.nombre);
+			this.nota=amadeus.controlaDoublePositivo();
+		}
 		this.nota = nota;
 	}
 	

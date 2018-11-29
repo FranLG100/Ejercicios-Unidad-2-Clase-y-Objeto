@@ -1,7 +1,12 @@
 package ejercicio06;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class Persona {
 
+	protected Amadeus amadeus=new Amadeus();
 	protected String nombre;
 	protected int edad;
 	
@@ -9,9 +14,14 @@ public class Persona {
 	 * Constructor de la clase persona con dos parámetros
 	 * @param nombre Nombre de la persona
 	 * @param edad Edad (en años) de la persona
+	 * @throws IOException 
 	 * */
-	public Persona(String nombre, int edad) {
-		this.nombre=nombre;
+	public Persona(String nombre, int edad) throws IOException {
+		this.nombre=amadeus.compruebaTexto(nombre);
+		if(edad<0) {
+			System.out.println("La edad no puede ser negativa, introduzca otra");
+			edad=amadeus.controlaIntPositivo();
+		}
 		this.edad=edad;
 	}
 	
@@ -25,15 +35,19 @@ public class Persona {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre(String nombre) throws IOException {
+		this.nombre = amadeus.compruebaTexto(nombre);
 	}
 
 	public int getEdad() {
 		return edad;
 	}
 
-	public void setEdad(int edad) {
+	public void setEdad(int edad) throws IOException {
+		if(edad<0) {
+			System.out.println("La edad no puede ser negativa, introduzca otra");
+			edad=amadeus.controlaIntPositivo();
+		}
 		this.edad = edad;
 	}
 

@@ -9,8 +9,17 @@ public class Alimento {
 	private String vitaminas;
 	private String minerales;
 	
+	/**
+	 * Constructor vacío de Alimento
+	 * */
 	public Alimento() {}
 	
+	/**
+	 * Constructor de Alimento, con seis parámetros de entrada
+	 * @param lipidos Porcentaje de lípidos del alimento
+	 * @param hCarbono Porcentaje de hidratos de carbono
+	 * @param proteinas Porcentaje de proteínas  del alimento
+	 * */
 	public Alimento(int lipidos, int hCarbono, int proteinas, boolean oAnimal, String vitaminas, String minerales) {
 		super();
 		this.lipidos = lipidos;

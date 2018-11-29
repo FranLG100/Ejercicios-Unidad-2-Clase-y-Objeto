@@ -1,10 +1,16 @@
 package ejercicio01;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class DVDCine {
 
 	/**
 	 * <h2>Clase DVDCine. Se utiliza para crear fichas de películas.</h2>*/
 	
+	
+	private Amadeus amadeus=new Amadeus();
 	/**
 	 * Atributo Título de la película (en español)
 	 */
@@ -56,13 +62,18 @@ public class DVDCine {
 	 * @param genero Género de la película
 	 * @param duracion Duración de la película
 	 * @param descripcion Descripción o breve sinopsis de la película
+	 * @throws IOException 
 	 */
-	public DVDCine(String titulo, String tituloOriginal, String director, String reparto, String genero, int duracion, String descripcion) {
+	public DVDCine(String titulo, String tituloOriginal, String director, String reparto, String genero, int duracion, String descripcion) throws IOException {
 		this.titulo=titulo;
 		this.tituloOriginal=tituloOriginal;
 		this.director=director;
 		this.reparto=reparto;
 		this.genero=genero;
+		if(duracion<0) {
+			System.out.println("La duración no puede ser menor a 0");
+			duracion=amadeus.controlaIntPositivo();
+		}
 		this.duracion=duracion;
 		this.descripcion=descripcion;
 	}
@@ -111,7 +122,11 @@ public class DVDCine {
 		return duracion;
 	}
 
-	public void setDuracion(int duracion) {
+	public void setDuracion(int duracion) throws IOException {
+		if(duracion<0) {
+			System.out.println("La duración no puede ser menor a 0");
+			duracion=amadeus.controlaIntPositivo();
+		}
 		this.duracion = duracion;
 	}
 

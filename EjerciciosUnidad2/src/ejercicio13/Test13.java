@@ -25,9 +25,19 @@ public class Test13 {
 			System.out.println("Introduzca porcentaje de lípidos");
 			aa[i].setLipidos(amadeus.controlaIntPorcentaje());
 			System.out.println("Introduzca porcentaje de hidratos de carbono");
+			do {
 			aa[i].sethCarbono(amadeus.controlaIntPorcentaje());
+			if((aa[i].getLipidos()+aa[i].gethCarbono())>100) {
+				System.out.println("La suma de los porcentajes no puede ser superior a 100");
+			}
+			}while((aa[i].getLipidos()+aa[i].gethCarbono())>100);
 			System.out.println("Introduzca porcentaje de proteínas");
+			do {
 			aa[i].setProteinas(amadeus.controlaIntPorcentaje());
+			if((aa[i].getLipidos()+aa[i].gethCarbono()+aa[i].getProteinas())>100) {
+				System.out.println("La suma de los porcentajes no puede ser superior a 100");
+			}
+			}while((aa[i].getLipidos()+aa[i].gethCarbono()+aa[i].getProteinas())>100);
 			System.out.println("¿Es de Origen Animal?");
 			aa[i].setoAnimal(amadeus.afirmaODesmiente());
 			System.out.println("Introduzca nivel de Vitaminas (a, m o b)");
@@ -52,12 +62,14 @@ public class Test13 {
 				}
 			} while (error);
 			aa[i].setMinerales(aux);
+			System.out.println("----------------------------------");
 		}
 
 		for (
 
 				int i = 0; i < aa.length; i++) {
-			System.out.println(aa[i].descripcionAlimento());
+			System.out.println("\nAlimento número "+(i+1)+":\n"
+				+aa[i].descripcionAlimento());
 		}
 	}
 

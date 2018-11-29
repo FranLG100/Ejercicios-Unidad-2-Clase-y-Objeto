@@ -12,7 +12,8 @@ public class Test01 {
 		// TODO Auto-generated method stub
 
 		DVDCine dvd01=new DVDCine();
-		DVDCine dvd02=new DVDCine("El Silencio de los corderos", "The Silence of the Lambs", "Johathan Demme", "Jodie Foster y Anthony Hopkins", "Thriller", 118, "Una agente en entrenamiento del FBI busca la ayuda y consejo de un brillante asesino para poder capturar a otro asesino, el doctor Hannibal Lecter.");
+		//La duración en este es errónea
+		DVDCine dvd02=new DVDCine("El Silencio de los corderos", "The Silence of the Lambs", "Johathan Demme", "Jodie Foster y Anthony Hopkins", "Thriller", -118, "Una agente en entrenamiento del FBI busca la ayuda y consejo de un brillante asesino para poder capturar a otro asesino, el doctor Hannibal Lecter.");
 		Amadeus amadeus=new Amadeus();
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -22,6 +23,8 @@ public class Test01 {
 		System.out.println(dvd02.muestraDuracion());
 		dvd02.muestraDVDCine();
 		System.out.println();
+		//Otro fallo
+		dvd01.setDuracion(-1);
 		
 		
 		//A continuación, le pedimos al usuario que rellene nuestro constructor vacío.

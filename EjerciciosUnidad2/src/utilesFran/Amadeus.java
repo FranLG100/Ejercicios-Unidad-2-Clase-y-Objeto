@@ -148,7 +148,7 @@ public class Amadeus {
 		do {
 			respuesta = entrada.readLine();
 			error = false;
-			if (respuesta.equalsIgnoreCase("si") || respuesta.equalsIgnoreCase("y") || respuesta.equalsIgnoreCase("sí") || respuesta.equalsIgnoreCase("s"))
+			if (respuesta.equalsIgnoreCase("si") || respuesta.equalsIgnoreCase("y") || respuesta.equalsIgnoreCase("sí") || respuesta.equalsIgnoreCase("s")|| respuesta.equalsIgnoreCase("yes"))
 				return true;
 			else if (respuesta.equalsIgnoreCase("no") || respuesta.equalsIgnoreCase("n"))
 				return false;

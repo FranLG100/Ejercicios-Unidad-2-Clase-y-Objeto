@@ -1,7 +1,12 @@
 package ejercicio03;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class Cuenta {
 	
+	private Amadeus amadeus=new Amadeus();
 	private static long id=100001; //Nos servirá para llevar un número de cuenta incremental
 	private long nCuenta; //Número de cuenta
 	private long dni;
@@ -25,16 +30,17 @@ public class Cuenta {
 	 * @param dni Número de identificación del dueño de la cuenta
 	 * @param saldoActual Cantidad de dinero disponible en la cuenta.
 	 * @param interes Porcentaje de interés aplicado a la cuenta. No puede ser menor a 0 o mayor a 100.
+	 * @throws IOException 
 	 */
-	public Cuenta(long dni, double saldoActual, double interes) {
+	public Cuenta(long dni, double saldoActual, double interes) throws IOException {
 		nCuenta=id;
 		id++;
 		this.dni=dni;
 		this.saldoActual=saldoActual;
-		if(interes>100)
-			this.interes=100;
-		if(interes<0)
-			this.interes=0;
+		if(interes>100 || interes<0){
+			System.out.println("El interés no puede ser menor de 0 o mayor a 100");
+			interes=amadeus.controlaDoublePorcentaje();
+		}
 		this.interes=interes;
 	}
 
@@ -58,11 +64,11 @@ public class Cuenta {
 		return interes;
 	}
 
-	public void setInteres(double interes) {
-		if(interes>100)
-			this.interes=100;
-		if(interes<0)
-			this.interes=0;
+	public void setInteres(double interes) throws IOException {
+		if(interes>100 || interes<0){
+			System.out.println("El interés no puede ser menor de 0 o mayor a 100");
+			interes=amadeus.controlaDoublePorcentaje();
+		}
 		this.interes = interes;
 	}
 	
@@ -77,22 +83,26 @@ public class Cuenta {
 	/**
 	 * Método que ingresa/suma dinero al saldo actual de la cuenta bancaria.
 	 * @param ingreso Cantidad de dinero a ingresar en la cuenta.
+	 * @throws IOException 
 	 * */
-	public void ingreso(double ingreso) {
-		if(ingreso<0)
-			System.out.println("No puede hacer un ingreso negativo");
-		else
-			saldoActual+=ingreso;
+	public void ingreso(double ingreso) throws IOException {
+		if(ingreso<0) {
+			System.out.println("Introduzca un valor positivo");
+			ingreso=amadeus.controlaDoublePositivo();	
+		}
+		saldoActual+=ingreso;
 	}
 	
 	/**
 	 * Método que retira/extrae dinero del saldo actual de la cuenta bancaria.
 	 * @param retirar Cantidad de dinero a retirar de la cuenta.
+	 * @throws IOException 
 	 * */
-	public void retirar(double retirar) {
-		if(retirar<0)
-			System.out.println("Ponga valores positivos");
-		else
+	public void retirar(double retirar) throws IOException {
+		if(retirar<0){
+			System.out.println("Introduzca un valor positivo");
+			retirar=amadeus.controlaDoublePositivo();
+		}
 			saldoActual-=retirar;
 	}
 	

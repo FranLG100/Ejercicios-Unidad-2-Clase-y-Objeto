@@ -20,7 +20,8 @@ public class Test02 {
 		System.out.println(v1.imprimirVehiculo());
 		
 		v2.setcRuedas(true);
-		v2.setPotencia(300);
+		//Error (a conciencia, para probar que funcione)
+		v2.setPotencia(-2300);
 		
 		System.out.println();
 		System.out.println(v2.imprimirVehiculo());

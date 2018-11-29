@@ -1,7 +1,12 @@
 package ejercicio02;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class Vehiculo {
 
+	private Amadeus amadeus=new Amadeus();
 	private String modelo;
 	private double potencia;
 	private boolean cRuedas;
@@ -42,8 +47,13 @@ public class Vehiculo {
 	/**
 	 * Método que establece la potencia del Vehículo
 	 * @param potencia Potencia del vehículo
+	 * @throws IOException 
 	 */
-	public void setPotencia(double potencia) {
+	public void setPotencia(double potencia) throws IOException {
+		if(potencia<0) {
+			System.out.println("La potencia no puede ser menor a 0");
+			potencia=amadeus.controlaDoublePositivo();
+		}
 		this.potencia = potencia;
 	}
 

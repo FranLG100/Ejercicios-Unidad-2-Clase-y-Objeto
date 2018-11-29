@@ -95,6 +95,7 @@ public class Triangulo {
 	}
 	
 	/**
+	 * 
 	 * Método que retorna el tipo de triangulo ante el cual nos encontramos
 	 * @return <ul>
 	 * 			<li>1 Triángulo Equilátero

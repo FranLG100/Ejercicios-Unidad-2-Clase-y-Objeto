@@ -87,11 +87,9 @@ public class Triangulo {
 	public boolean compareTo_VTriangulos(Triangulo v[]) {
 		boolean comprobador=true;
 		for (int i = 0; i < v.length; i++) {
-			for (int j = 0; j < v.length; j++) {
-				comprobador=v[i].compareTo_Triangulos(v[i], v[j]);
+				comprobador=v[0].compareTo_Triangulos(v[0], v[i]);
 				if(!comprobador)
 					break;
-			}
 		}
 		return comprobador;
 	}

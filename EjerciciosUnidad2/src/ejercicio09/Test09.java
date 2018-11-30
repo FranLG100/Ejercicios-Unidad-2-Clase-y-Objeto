@@ -7,10 +7,10 @@ public class Test09 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		Persona p=new Persona("García", "Ramón", "Hombre", 28822882);
-		Docente d=new Docente("García", "Ramón", "Hombre", 28822882, 4, "Profesor", "Comunicación", 6, 8);
+		Persona p=new Persona("García", "Ramón", "Hombre", "288228825");//DNI NO VÁLIDO
+		Docente d=new Docente("García", "Ramón", "Hombre", "28822885Q", 4, "Profesor", "Comunicación", 6, 8);
 		//Estudiante con fallo a corregir en consola
-		Estudiante e=new Estudiante("", "Ramón", "Hombre", 28822882, 1231, "Alumno", 800, "C.P. Cristóbal Colón");
+		Estudiante e=new Estudiante("", "Ramón", "Hombre", "28582288Q", 1231, "Alumno", 800, "C.P. Cristóbal Colón");
 		
 		//Test sencillo para probar que funcionan sus métodos.
 		System.out.println(p.toString());

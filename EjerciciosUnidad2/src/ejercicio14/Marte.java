@@ -1,10 +1,13 @@
 package ejercicio14;
 
+import java.io.IOException;
+
 public class Marte {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
+		//Tal y como viene en el ejercicio
 		Marciano et1=new Marciano("Rodolfo");
 		et1.cuentaMarcianos();
 		Marciano et2=new Marciano("Basilio");

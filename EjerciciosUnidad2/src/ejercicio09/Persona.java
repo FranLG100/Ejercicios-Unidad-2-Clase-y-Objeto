@@ -10,7 +10,7 @@ public class Persona {
 	protected String apellidos;
 	protected String nombre;
 	protected String sexo;
-	protected int dni;
+	protected String dni;
 	
 	/**
 	 * Constructor de Persona, con cuatro parámetros
@@ -20,15 +20,11 @@ public class Persona {
 	 * @param dni Número identificativo de la persona
 	 * @throws IOException 
 	 * */
-	public Persona(String apellidos, String nombre, String sexo, int dni) throws IOException {
+	public Persona(String apellidos, String nombre, String sexo, String dni) throws IOException {
 		this.apellidos = amadeus.compruebaTexto(apellidos);
 		this.nombre = amadeus.compruebaTexto(nombre);
 		this.sexo = amadeus.compruebaTexto(sexo);
-		if(dni<0) {
-			System.out.println("El DNI no puede ser negativo, vuélvalo a introducir");
-			dni=amadeus.controlaIntPositivo();
-		}
-		this.dni = dni;
+		this.dni = amadeus.compruebaNIF(dni);
 	}
 	
 	public String getApellidos() {
@@ -49,15 +45,11 @@ public class Persona {
 	public void setSexo(String sexo) throws IOException {
 		this.sexo = amadeus.compruebaTexto(sexo);
 	}
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
-	public void setDni(int dni) throws IOException {
-		if(dni<0) {
-			System.out.println("El DNI no puede ser negativo, vuélvalo a introducir");
-			dni=amadeus.controlaIntPositivo();
-		}
-		this.dni = dni;
+	public void setDni(String dni) throws IOException {
+		this.dni = amadeus.compruebaNIF(dni);
 	}
 	
 	/**

@@ -18,7 +18,7 @@ public class Test05 {
 		System.out.println(e2.printAll());
 		//Ahora, el usuario le dará vida.
 		System.out.println("Introduzca DNI");
-		e2.setDni(amadeus.controlaIntPositivo());
+		e2.setDni(amadeus.recibeTexto());
 		System.out.println("Introduzca sueldo base");
 		e2.setSueldoBase(amadeus.controlaDoublePositivo());
 		System.out.println("Introduzca pago por hora extra");

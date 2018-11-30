@@ -13,9 +13,8 @@ public class Test15 {
 		int code;
 		Cuenta a = null;
 
-		
-			System.out.println("Buenos días.");
-			do {
+		System.out.println("Buenos días.");
+		do {
 			System.out.println("¿Qué operación desea realizar?");
 			System.out.println("1.-Crear una cuenta vacía" + "\n2.-Crear una cuenta con saldo inicial"
 					+ "\n3.-Ingresar dinero" + "\n4.-Retirar dinero" + "\n5.-Ver saldo" + "\n6.-Salir");

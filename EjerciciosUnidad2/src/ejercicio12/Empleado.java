@@ -1,10 +1,15 @@
 package ejercicio12;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class Empleado {
 
+	private Amadeus amadeus=new Amadeus();
 	private String nombre;
 	private int nHoras;
-	private int pago;
+	private double pago;
 	
 	
 	/**
@@ -46,8 +51,8 @@ public class Empleado {
 	}
 
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombre(String nombre) throws IOException {
+		this.nombre = amadeus.compruebaTexto(nombre);
 	}
 
 
@@ -56,18 +61,51 @@ public class Empleado {
 	}
 
 
-	public void setnHoras(int nHoras) {
+	public void setnHoras(int nHoras) throws IOException {
+		if(nHoras<0) {
+			System.out.println("El valor de las horas no puede ser negativo");
+			nHoras=amadeus.controlaIntPositivo();
+		}
 		this.nHoras = nHoras;
 	}
 
 
-	public int getPago() {
+	public double getPago() {
 		return pago;
 	}
 
 
-	public void setPago(int pago) {
+	public void setPago(double pago) throws IOException {
+		if(pago<0) {
+			System.out.println("El pago no puede ser negativo");
+			pago=amadeus.controlaDoublePositivo();
+		}
 		this.pago = pago;
+	}
+	
+	/**
+	 * Método para recibir e imprimir datos de cuantos empleados se desee. Pedirá cuantos
+	 * empleados se desea introducir, su nombre, sus horas trabajadas, y su sueldo.
+	 * Al final, imprimirá a todos esos empleados.
+	 * */
+	public void imprimirEmpleados() throws IOException {
+		int k;
+		System.out.println("¿Cuántos empleados desea introducir?");
+		k=amadeus.controlaIntPositivo();
+		Empleado[] a=new Empleado[k];
+		for (int i = 0; i < a.length; i++) {
+			a[i]=new Empleado("n",0,0);
+			System.out.println("Introduzca nombre del Empleado número "+(i+1));
+			a[i].setNombre(amadeus.recibeTexto());
+			System.out.println("Introduzca número de horas trabajadas del Empleado número "+(i+1));
+			a[i].setnHoras(amadeus.controlaIntPositivo());
+			System.out.println("Introduzca pago por hora trabajada del Empleado número "+(i+1));
+			a[i].setPago(amadeus.controlaIntPositivo());
+		}
+		
+		for (int i = 0; i < a.length; i++) {
+			System.out.println(a[i].toString());
+		}
 	}
 	
 	

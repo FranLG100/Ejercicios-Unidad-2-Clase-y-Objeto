@@ -13,22 +13,10 @@ public class Test12 {
 
 		Amadeus amadeus=new Amadeus();
 		System.out.println("Buenas tardes.");
-		Empleado[] a=new Empleado[3];
+		Empleado e=new Empleado("n",0,0);
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-		
-		for (int i = 0; i < a.length; i++) {
-			a[i]=new Empleado("n",0,0);
-			System.out.println("Introduzca nombre del Empleado número "+(i+1));
-			a[i].setNombre(entrada.readLine());
-			System.out.println("Introduzca número de horas trabajadas del Empleado número "+(i+1));
-			a[i].setnHoras(amadeus.controlaIntPositivo());
-			System.out.println("Introduzca pago por hora trabajada del Empleado número "+(i+1));
-			a[i].setPago(amadeus.controlaIntPositivo());
-		}
-		
-		for (int i = 0; i < a.length; i++) {
-			System.out.println(a[i].toString());
-		}
+		//En lugar de tres empleados, son los que usuario desee meter.
+		e.imprimirEmpleados();
 	}
 
 }

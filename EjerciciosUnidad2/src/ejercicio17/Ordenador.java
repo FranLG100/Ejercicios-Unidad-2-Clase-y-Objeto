@@ -1,7 +1,12 @@
 package ejercicio17;
 
+import java.io.IOException;
+
+import utilesFran.Amadeus;
+
 public class Ordenador {
 
+	protected Amadeus amadeus=new Amadeus();
 	protected int ram;
 	protected int discoDuro;
 	protected String procesador;
@@ -13,13 +18,31 @@ public class Ordenador {
 	}
 	
 
-	public Ordenador(int ram, int discoDuro, String procesador, String grafica, double precio) {
-		super();
+	/**
+	 * Constructor de Ordenador con cinco parámetros
+	 * @param ram Cantidad de memoria RAM del ordenador
+	 * @param discoDuro Capacidad de memoria del PC
+	 * @param procesador Marca del procesador del PC
+	 * @param grafica Marca de la gráfica del PC
+	 * @param precio Precio del PC
+	 * */
+	public Ordenador(int ram, int discoDuro, String procesador, String grafica, double precio) throws IOException {
+		if(ram<0) {
+			System.out.println("La RAM no puede ser negativa. Introduzcalo de nuevo");
+			ram=amadeus.controlaIntPositivo();
+		}
 		this.ram = ram;
+		if(discoDuro<0) {
+			System.out.println("El Disco duro no puede ser negativo. Introduzcalo de nuevo");
+			discoDuro=amadeus.controlaIntPositivo();
+		}
 		this.discoDuro = discoDuro;
-		this.procesador = procesador;
-		this.grafica = grafica;
-		this.precio = precio;
+		this.procesador = amadeus.compruebaTexto(procesador);
+		this.grafica = amadeus.compruebaTexto(grafica);
+		if(precio<0) {
+			System.out.println("El precio no puede ser negativo. Introduzcalo de nuevo");
+			precio=amadeus.controlaDoublePositivo();
+			}
 	}
 
 
@@ -28,7 +51,11 @@ public class Ordenador {
 		return ram;
 	}
 
-	public void setRam(int ram) {
+	public void setRam(int ram) throws IOException {
+		if(ram<0) {
+			System.out.println("La RAM no puede ser negativa. Introduzcalo de nuevo");
+			ram=amadeus.controlaIntPositivo();
+		}
 		this.ram = ram;
 	}
 
@@ -44,16 +71,16 @@ public class Ordenador {
 		return procesador;
 	}
 
-	public void setProcesador(String procesador) {
-		this.procesador = procesador;
+	public void setProcesador(String procesador) throws IOException {
+		this.procesador = amadeus.compruebaTexto(procesador);
 	}
 
 	public String getGrafica() {
 		return grafica;
 	}
 
-	public void setGrafica(String grafica) {
-		this.grafica = grafica;
+	public void setGrafica(String grafica) throws IOException {
+		this.grafica = amadeus.compruebaTexto(grafica);
 	}
 
 	public double getPrecio() {
@@ -65,6 +92,10 @@ public class Ordenador {
 	}
 
 
+	/**
+	 * Método que imprime los datos del ordenador
+	 * @return Ficha completa del ordenador
+	 * */
 	@Override
 	public String toString() {
 		return "Memoria Ram: "+ram

@@ -22,7 +22,7 @@ public class Estudiante extends Persona{
 	 * @param colegio Colegio del cual procede el estudiante
 	 * @throws IOException 
 	 * */
-	public Estudiante(String apellidos, String nombre, String sexo, int dni, int codigo, String categoria,
+	public Estudiante(String apellidos, String nombre, String sexo, String dni, int codigo, String categoria,
 			int pagoPensiones, String colegio) throws IOException {
 		super(apellidos, nombre, sexo, dni);
 		this.codigo = codigo;

@@ -7,7 +7,7 @@ import utilesFran.Amadeus;
 public class Empleado {
 	
 	private Amadeus amadeus=new Amadeus();
-	private int dni;
+	private String dni;
 	private double sueldoBase;
 	private double pagoHoraExtra;
 	private int horasExtra;
@@ -26,24 +26,16 @@ public class Empleado {
 	 * @param dni Número de identidad del empleado.
 	 * @throws IOException 
 	 * */
-	public Empleado(int dni) throws IOException {
-		if(dni<0) {
-			System.out.println("El DNI no puede ser negativo. Introduzca otro");
-			dni=amadeus.controlaIntPositivo();
-		}
-		this.dni = dni;
+	public Empleado(String dni) throws IOException {
+		this.dni = amadeus.compruebaNIF(dni);
 	}
 
-	public int getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(int dni) throws IOException {
-		if(dni<0) {
-			System.out.println("El DNI no puede ser negativo. Introduzca otro");
-			dni=amadeus.controlaIntPositivo();
-		}
-		this.dni = dni;
+	public void setDni(String dni) throws IOException {
+		this.dni = amadeus.compruebaNIF(dni);
 	}
 
 	public double getSueldoBase() {

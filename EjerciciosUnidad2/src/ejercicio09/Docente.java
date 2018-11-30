@@ -27,7 +27,7 @@ public class Docente extends Persona{
 	 * @param pago Cantidad pagada por hora extra al profesor
 	 * */
 
-	public Docente(String apellidos, String nombre, String sexo, int dni, int codigo, String categoria, String estudios, int horas, double pago) throws IOException {
+	public Docente(String apellidos, String nombre, String sexo, String dni, int codigo, String categoria, String estudios, int horas, double pago) throws IOException {
 		super(apellidos,nombre,sexo,dni);
 		if(codigo<0) {
 			System.out.println("Error en el código");

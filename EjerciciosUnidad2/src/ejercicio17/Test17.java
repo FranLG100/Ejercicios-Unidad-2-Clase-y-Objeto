@@ -8,7 +8,11 @@ import utilesFran.Amadeus;
 
 public class Test17 {
 
-	
+	/**
+	 * Método estático que controla que la capacidad del disco duro sea múltiplo de 5
+	 * @param capacidad Capacidad de disco duro a controlar
+	 * @return Capacidad del disco duro ya validada
+	 * */
 	public static int controlDiscoDuro(int capacidad) throws IOException {
 		int comprobante=capacidad;
 		Amadeus amadeus=new Amadeus();
@@ -19,6 +23,11 @@ public class Test17 {
 		return comprobante;
 	}
 	
+	/**
+	 * Método estático que controla que la marca del procesador sea la indicada
+	 * @param procesador Marca del procesador a introducir
+	 * @return Procesador validado
+	 * */
 	public static String controlProcesador(String procesador) throws IOException {
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 		String[] listaProcesadores= {"Intel", "AMD", "IBM"};
@@ -38,6 +47,11 @@ public class Test17 {
 		return comprobanteProcesador;	
 	}
 	
+	/**
+	 * Método estático que controla que el tamaño de la pantalla sea de al menos, 14
+	 * @param capacidad Tamaño de la pantalla a controlar
+	 * @return Tamaño de la pantalla ya validado
+	 * */
 	public static int controlPantalla(int capacidad) throws IOException {
 		int comprobante=capacidad;
 		Amadeus amadeus=new Amadeus();
@@ -48,6 +62,10 @@ public class Test17 {
 		return comprobante;
 	}
 	
+	/**
+	 * Método estático que controla que el precio sea válido
+	 * @return Precio válido del ordenador
+	 * */
 	public static double controlPrecio() throws IOException {
 		Amadeus amadeus=new Amadeus();
 		double controlPrecio;

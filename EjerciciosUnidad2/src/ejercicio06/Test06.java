@@ -11,7 +11,7 @@ public class Test06 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		Persona p1=new Persona("Francisco Lorente", -25); //Fallo aquí (queriendo, se corrige en consola)
+		Persona p1=new Persona("Francisco Lorente", 25);
 		Empleado e1=new Empleado("Juan Ignacio Martínez", 42, 1600);
 		Empleado e2=new Empleado();
 		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));

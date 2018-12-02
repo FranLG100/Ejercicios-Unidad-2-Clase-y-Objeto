@@ -26,14 +26,15 @@ public class Test03 {
 		//Mostramos la segunda cuenta
 		System.out.println(c2.mostrarCuenta());
 		System.out.println();
-		//Fallamos queriendo
-		c2.ingreso(-5);
-		c2.retirar(-7);
+		//Fallamos queriendo. Descomentar si se quiere probar el fallo.
+		//c2.ingreso(-5);
+		//c2.retirar(-7);
 		//Actualizamos el saldo
 		c2.actualizarSaldo();
 		//Mostramos la cuenta
 		System.out.println(c2.mostrarCuenta());
 		
+		System.out.println();
 		//El usuario creará una cuenta ahora
 		System.out.println("Introduzca su DNI");
 		Cuenta c3=new Cuenta();

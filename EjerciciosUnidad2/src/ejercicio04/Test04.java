@@ -10,12 +10,15 @@ public class Test04 {
 		// TODO Auto-generated method stub
 
 		Cafetera c1=new Cafetera();
-		Cafetera c2=new Cafetera(-500,-750);
+		Cafetera c2=new Cafetera(500,750);
 		Cafetera c3=new Cafetera(200);
 		Amadeus amadeus=new Amadeus();
 		int control=0;
 		
+		//En la parte inferior, el usuario mete los datos por consola
+		//*********************************
 		//Pruebas con cafeteras ya creadas
+		//***********************************
 		System.out.println(c1.getMaxCapacidad());
 		System.out.println(c1.getActCapacidad());
 		System.out.println();
@@ -35,7 +38,9 @@ public class Test04 {
 		c1.vaciarCafetera(); //Vaciamos la cafetera
 		System.out.println(c1.getActCapacidad());
 		
+		
 		//Probamos a que el usuario cree una cafetera (con capacidad máxima y mínima)
+		//***********************************************************************
 		System.out.println("\nVamos a crear una cafetera");
 		System.out.println("¿Cuál será su capacidad máxima?");
 		Cafetera c4=new Cafetera();

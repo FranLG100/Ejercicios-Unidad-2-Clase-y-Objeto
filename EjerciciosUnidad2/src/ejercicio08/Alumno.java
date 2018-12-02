@@ -9,10 +9,10 @@ import utilesFran.Amadeus;
 public class Alumno {
 	
 	private Amadeus amadeus=new Amadeus();
-	private String nombreAlumno;
-	private int edad;
-	private Asignatura asignatura;
-	private ArrayList<Asignatura> temario=new ArrayList();
+	private String nombreAlumno; //Nombre del Alumno
+	private int edad; //Edad del alumno
+	private Asignatura asignatura; //Objeto Asignatura
+	private ArrayList<Asignatura> temario=new ArrayList(); //Lista de Asignaturas del alumno
 	
 	
 	

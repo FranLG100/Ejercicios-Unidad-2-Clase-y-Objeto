@@ -7,8 +7,8 @@ import utilesFran.Amadeus;
 public class Persona {
 
 	protected Amadeus amadeus=new Amadeus();
-	protected String nombre;
-	protected int edad;
+	protected String nombre; //Nombre de la persona
+	protected int edad; //Edad de la persona
 	
 	/**
 	 * Constructor de la clase persona con dos parámetros

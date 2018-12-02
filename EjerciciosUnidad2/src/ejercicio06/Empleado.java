@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Empleado extends Persona {
 
-	private double sueldo;
+	private double sueldo; //Sueldo del empleado
 
 	
 	

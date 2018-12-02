@@ -7,17 +7,18 @@ import utilesFran.Amadeus;
 public class Vehiculo {
 
 	private Amadeus amadeus=new Amadeus();
-	private String modelo;
-	private double potencia;
-	private boolean cRuedas;
-	private String confirmacion;
+	private String modelo; //Modelo del coche
+	private double potencia; //Potencia del coche
+	private boolean cRuedas; //Si tiene o no tracción a las cuatro ruedas
+	private String confirmacion; //Para mostrar por pantalla 'Sí' o 'No'
 
 	/**
 	 * Constructor con un parámetros. Crea un objeto vehículo con la marca del mismo establecida.
 	 * @param modelo Modelo del vehículo creado
+	 * @throws IOException 
 	 */
-	public Vehiculo(String modelo) {
-		this.modelo = modelo;
+	public Vehiculo(String modelo) throws IOException {
+		this.modelo = amadeus.compruebaTexto(modelo);
 	}
 
 	/**

@@ -32,6 +32,7 @@ public class Test02 {
 		Vehiculo v3=new Vehiculo(entrada.readLine());
 		System.out.println("Introduzca potencia del vehículo");
 		v3.setPotencia(amadeus.controlaDoublePositivo());
+		//A esta pregunta, se puede responder con si, sí, no, n, yes, y o s
 		System.out.println("¿Tiene tracción a las cuatro ruedas?");
 		v3.setcRuedas(amadeus.afirmaODesmiente());
 		System.out.println("Este es el coche que ha creado:");

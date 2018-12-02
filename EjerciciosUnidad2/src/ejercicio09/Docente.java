@@ -6,11 +6,11 @@ import utilesFran.Amadeus;
 
 public class Docente extends Persona{
 
-	private int codigo;
-	private String categoria;
-	private String estudios;
-	private int horas;
-	private double pago;
+	private int codigo; //Código de docente
+	private String categoria; //Categoría de docente
+	private String estudios; //Estudio de posgrado de docente
+	private int horas; //Horas trabajadas del docente
+	private double pago; //Pago por hora trabajada del docente
 	private Amadeus amadeus=new Amadeus();
 	
 	

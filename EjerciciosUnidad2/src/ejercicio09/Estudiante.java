@@ -4,10 +4,10 @@ import java.io.IOException;
 
 public class Estudiante extends Persona{
 
-	private int codigo;
-	private String categoria;
-	private double pagoPensiones;
-	private String colegio;
+	private int codigo; //Código de estudiante
+	private String categoria; //Categoría de estudiante
+	private double pagoPensiones; //
+	private String colegio; //Anterior colegio del estudiante
 	
 
 	/**

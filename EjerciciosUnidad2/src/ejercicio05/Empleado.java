@@ -7,13 +7,13 @@ import utilesFran.Amadeus;
 public class Empleado {
 	
 	private Amadeus amadeus=new Amadeus();
-	private String dni;
-	private double sueldoBase;
-	private double pagoHoraExtra;
-	private int horasExtra;
-	private double irpf;
-	private boolean casado;
-	private int nHijos;
+	private String dni; //DNI del empleado
+	private double sueldoBase; //Sueldo base del empleado
+	private double pagoHoraExtra; //Cantidad de dinero a percibir por hora extra
+	private int horasExtra; //Cantidad de horas extra trabajadas
+	private double irpf; //% de IRPF
+	private boolean casado; //Si el empleado está casado o no
+	private int nHijos; //Número de hijos del empleado
 	
 	/**
 	 * Constructor vacío de la clase empleado. Crea un empleado con sus valores por defecto.

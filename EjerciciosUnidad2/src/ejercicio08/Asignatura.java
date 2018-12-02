@@ -8,8 +8,8 @@ import utilesFran.Amadeus;
 
 public class Asignatura {
 	
-	private String nombre;
-	private double nota;
+	private String nombre; //Nombre de la Asignatura
+	private double nota; //Nota de la asignatura
 	private Amadeus amadeus=new Amadeus();
 	BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
 	

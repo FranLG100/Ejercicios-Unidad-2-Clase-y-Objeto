@@ -18,10 +18,10 @@ public class Test08 {
 		Asignatura a1 = new Asignatura("Lenguaje", 1);
 		Asignatura a2 = new Asignatura("Sociales", 5);
 		Asignatura a3 = new Asignatura("Ambientales", 6);
-		Asignatura a4 = new Asignatura("", -2); //Error a arreglar en consola
+		Asignatura a4 = new Asignatura("Plástica", 2); //Error a arreglar en consola
 		Asignatura a5 = new Asignatura("Matemáticas", 10);
 
-		Alumno alum = new Alumno("", -19, a1); //Error a arreglar en consola
+		Alumno alum = new Alumno("", 19, a1); //Error a arreglar en consola
 		Alumno alum2 = new Alumno("Perico Palos", 22, a3);
 		Alumno alum3 = new Alumno("Bernarda Alba", 19, a5);
 		alum.addAsignatura(a2);

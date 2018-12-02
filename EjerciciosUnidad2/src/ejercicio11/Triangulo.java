@@ -96,7 +96,7 @@ public class Triangulo {
 	public boolean compareTo_Triangulos(Triangulo a, Triangulo b) {
 		double[] t1= {a.getLong_lado1(), a.getLong_lado2(), a.getLong_lado3()};
 		double[] t2= {b.getLong_lado1(), b.getLong_lado2(), b.getLong_lado3()};
-		
+		//Todos los lados de cada triángulo son introducidos en arrays, ordenados, y comparados
 		Arrays.sort(t1);
 		Arrays.sort(t2);
 		
@@ -113,6 +113,8 @@ public class Triangulo {
 	 * 			</ul>
 	 * */
 	public boolean compareTo_VTriangulos(Triangulo v[]) {
+		//Parecido al anterior. Pero ejecutando el método de comparar con el primer triángulo
+		//hacia el resto.
 		boolean comprobador=true;
 		for (int i = 0; i < v.length; i++) {
 				comprobador=v[0].compareTo_Triangulos(v[0], v[i]);

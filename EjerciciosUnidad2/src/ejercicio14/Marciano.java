@@ -7,9 +7,9 @@ import utilesFran.Amadeus;
 public class Marciano {
 
 	private Amadeus amadeus=new Amadeus();
-	private static int numMarcianos=0;
-	private boolean vivo;
-	private String nombre;
+	private static int numMarcianos=0; //Para llevar la cuenta de marcianos
+	private boolean vivo; //Si el marciano está vivo o no
+	private String nombre; //Nombre del Marciano
 	
 	/**
 	 * Constructor por defecto de la clase marciano. Requiere un parámetro de entrada.

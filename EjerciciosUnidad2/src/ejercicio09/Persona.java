@@ -7,10 +7,10 @@ import utilesFran.Amadeus;
 public class Persona {
 
 	protected Amadeus amadeus=new Amadeus();
-	protected String apellidos;
-	protected String nombre;
-	protected String sexo;
-	protected String dni;
+	protected String apellidos; //Apellidos de la persona
+	protected String nombre; //Nombre de la persona
+	protected String sexo; //Género de la persona
+	protected String dni; //DNI de la persona
 	
 	/**
 	 * Constructor de Persona, con cuatro parámetros

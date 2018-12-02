@@ -9,9 +9,9 @@ public class Cuenta {
 	private Amadeus amadeus=new Amadeus();
 	private static long id=100001; //Nos servirá para llevar un número de cuenta incremental
 	private long nCuenta; //Número de cuenta
-	private long dni;
-	private double saldoActual;
-	private double interes;
+	private long dni; //Dni de la dueña de la cuenta 
+	private double saldoActual; // Saldo actual en la cuenta
+	private double interes; // Tanto por ciento de interés de la cuenta
 	
 	/**
 	 * Constructor vacío. Crea una cuenta bancaria con los datos por defecto.

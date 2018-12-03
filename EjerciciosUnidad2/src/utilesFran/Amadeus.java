@@ -274,12 +274,13 @@ public class Amadeus {
 		String respuesta=s;
 		boolean error = false;
 		char c;
-		while(respuesta.length()!=9) {
-			System.out.println("Longitud del DNI incorrecta, vuelva a introducirlo");
-			respuesta=recibeTexto();
-		}
+		
 		do {
 			error=false;
+			while(respuesta.length()!=9) {
+				System.out.println("Longitud del DNI incorrecta, vuelva a introducirlo");
+				respuesta=recibeTexto();
+			}
 			for (int i = 0; i < 8; i++) {
 				c = respuesta.charAt(i);
 				if (!Character.isDigit(c)) {

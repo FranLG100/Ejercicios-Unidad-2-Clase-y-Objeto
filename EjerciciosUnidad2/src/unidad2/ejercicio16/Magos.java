@@ -1,4 +1,4 @@
-package ejercicio16;
+package unidad2.ejercicio16;
 
 import java.io.IOException;
 

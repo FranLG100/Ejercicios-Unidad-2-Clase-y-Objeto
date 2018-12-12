@@ -1,6 +1,6 @@
 package personajes;
 
-public class Personaje {
+public abstract class Personaje {
 
 	protected String nombre;
 	
@@ -12,6 +12,6 @@ public class Personaje {
 		System.out.println("¡"+nombre+" ataca!");
 	}
 	
-	public  void Defender() {};
+	public abstract void Defender();
 	
 }

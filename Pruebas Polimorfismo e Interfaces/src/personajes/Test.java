@@ -5,15 +5,14 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Personaje[] personajes=new Personaje[3];
+		Personaje[] personajes=new Personaje[2];
 		personajes[0]=new Guerrero("Kronk");
 		personajes[1]=new Mago("Stan");
 		Guerrero g=new Guerrero("Steiner");
 		Mago m=new Mago("Merlín");
 		Jugador j=new Mago("Rasmodius");
 		//No puedo instanciar un personaje porque es una clase abstracta
-		Personaje p=new Personaje("Luis");
-		personajes[2]=p;
+		//Personaje p=new Personaje("Luis");
 		Personaje q=new Guerrero("Juan");
 		
 		//Pueden acceder a cualquiera de sus métodos, inclusive gritar.

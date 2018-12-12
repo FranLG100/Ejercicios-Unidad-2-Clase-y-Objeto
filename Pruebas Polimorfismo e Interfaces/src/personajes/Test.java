@@ -9,27 +9,29 @@ public class Test {
 		personajes[0]=new Guerrero("Kronk");
 		personajes[1]=new Mago("Stan");
 		Guerrero g=new Guerrero("Steiner");
-		Mago m=new Mago("MerlÌn");
+		Mago m=new Mago("Merl√≠n");
 		Jugador j=new Mago("Rasmodius");
 		//No puedo instanciar un personaje porque es una clase abstracta
 		//Personaje p=new Personaje("Luis");
 		Personaje q=new Guerrero("Juan");
 		
-		//Pueden acceder a cualquiera de sus mÈtodos, inclusive gritar.
+		//Pueden acceder a cualquiera de sus m√©todos, inclusive gritar.
 		System.out.println("\nPRUEBA GUERRERO Y MAGO");
 		g.Gritar();
 		g.Cargar();
 		m.Gritar();
 		m.Leer();
 		
-		//Al ser jugador, sÛlo puede gritar.
+		//Al ser jugador, s√≥lo puede gritar.
 		System.out.println("\nPRUEBA INTERFAZ");
 		j.Gritar();
 		
 		System.out.println("\nPRUEBA POLIMORFISMO");
 		//Pueden defenderse y gritar, porque son Personajes. Pero no gritar, 
-		//porque Personaje no implementa el grito. Ni son mÈtodos comunes.
+		//porque Personaje no implementa el grito. Ni son m√©todos comunes.
 		//Es decir, no pueden ni Leer() ni Cargar()
+		//Eso s√≠, al estar polimorfado, el personaje usa sus m√©todos (Ataca y Defiende)
+		//PERO con el comportamiento de su hijo. O Ataca y defiende como un guerrero, o ataca y defiende como un mago.
 		for (int i = 0; i < personajes.length; i++) {
 			personajes[i].Ataca();
 			personajes[i].Defender();

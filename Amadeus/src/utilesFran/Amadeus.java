@@ -36,7 +36,7 @@ public class Amadeus {
 				error = true;
 			}
 		} while (error);
-		return entero;
+		return entero;//
 	}
 
 	/**

@@ -36,7 +36,7 @@ public class Amadeus {
 				error = true;
 			}
 		} while (error);
-		return entero;//
+		return entero;
 	}
 
 	/**
@@ -61,6 +61,15 @@ public class Amadeus {
 		return entero;
 	}
 	
+	
+	/**
+	 * Método que aplica solicita la introducción de un dato tipo Integer
+	 * y aplica los try catch necesarios durante el proceso, entre un Mínimo
+	 * y un Máximo
+	 * @param min Rango mínimo del entero a introducir
+	 * @param max Rango máximo del entero a introducir
+	 * @return Número entero controlado
+	 * */
 	public int controlaIntMinMax(int min, int max) throws IOException {
 		int aux=0;
 		if(min>max) {
@@ -415,6 +424,11 @@ public class Amadeus {
 		return inversion;
 	}
 	
+	/**
+	 * Método que ordena de menor a mayor un array mediante el método de la Burbuja.
+	 * @param array Array que deseamos ordenar
+	 * @return Array ya ordenado
+	 * */
 	public int[] ordenacionAscendenteBurbujaArray(int[] array) {
 		int aux;
 		int mayor = array[0];
@@ -433,6 +447,11 @@ public class Amadeus {
 		return array;
 	}
 	
+	/**
+	 * Método que ordena de mayor a menor un array mediante el método de la Burbuja.
+	 * @param array Array que deseamos ordenar
+	 * @return Array ya ordenado
+	 * */
 	public int[] ordenacionDescendenteBurbujaArray(int[] array) {
 		int aux;
 		int mayor = array[0];
@@ -451,6 +470,11 @@ public class Amadeus {
 		return array;
 	}
 	
+	/**
+	 * Método que ordena de menor a mayor un array mediante el método de Inserción Directa.
+	 * @param array Array que deseamos ordenar
+	 * @return Array ya ordenado
+	 * */
 	public int[] ordenacionDirectaAscendenteArray(int[] array) {
 		int index=0;
 		int aux=0;
@@ -466,6 +490,12 @@ public class Amadeus {
 		return array;
 	}
 	
+	
+	/**
+	 * Método que ordena de mayor a menor un array mediante el método de Inserción Directa.
+	 * @param array Array que deseamos ordenar
+	 * @return Array ya ordenado
+	 * */
 	public int[] ordenacionDirectaDescendenteArray(int[] array) {
 		int index=0;
 		int aux=0;
@@ -510,7 +540,7 @@ public class Amadeus {
 	 * @param maxVal Valor máximo de los números aleatorios generados que llenarán la matriz
 	 * @return El método devolverá una matriz de tamaño 'tamanho' ya lleno
 	 * */
-	public int[][] creaMatrizLlena(int filas, int columnas, int maxVal) {
+	public int[][] creaMatriz(int filas, int columnas, int maxVal) {
 		int[][]matriz=new int[filas][columnas];
 		return rellenaMatriz(matriz, maxVal);
 	}
@@ -613,6 +643,12 @@ public class Amadeus {
 		}
 	}
 	
+	/**
+	 * Método que halla el mayor valor de una fila.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param fila Fila de la cual queremos sacar el mayor valor
+	 * @return Mayor valor de la fila
+	 * */
 	public int mayorEnFila(int[][] matriz, int fila) {
 		int aux=matriz[fila][0];
 		for (int i = 0; i < matriz.length; i++) {
@@ -622,7 +658,14 @@ public class Amadeus {
 		return aux;
 	}
 	
+	
 	//DA EL NUMERO DE COLUMNA EN EL CUAL ESTÁ
+	/**
+	 * Método que halla las columnas del mayor valor de una fila.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param fila Fila de la cual queremos sacar el mayor valor
+	 * @return Columnas en las cuales se encuentra el mayor valor de la fila
+	 * */
 	public int[] posicionesMayorEnFila(int[][] matriz,int fila) {
 		int aux=mayorEnFila(matriz,fila);
 		int cont=0;
@@ -642,6 +685,12 @@ public class Amadeus {
 		return respuesta;
 	}
 	
+	/**
+	 * Método que halla el mayor valor de una columna.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param columna Columna de la cual queremos sacar el mayor valor
+	 * @return Mayor valor de la columna
+	 * */
 	public int mayorEnColumna(int[][] matriz, int columna) {
 		int aux=matriz[0][columna];
 		for (int i = 0; i < matriz.length; i++) {
@@ -652,6 +701,12 @@ public class Amadeus {
 	}
 	
 	//DA EL NÚMERO DE FILA EN EL CUAL ESTÁ
+	/**
+	 * Método que halla las filas del mayor valor de una columna.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param columna Columna de la cual queremos sacar el mayor valor
+	 * @return Filas en las cuales se encuentra el mayor valor de la columna
+	 * */
 	public int[] posicionesMayorEnColumna(int[][] matriz,int columna) {
 		int aux=mayorEnColumna(matriz,columna);
 		int cont=0;
@@ -671,6 +726,12 @@ public class Amadeus {
 		return respuesta;
 	}
 	
+	/**
+	 * Método que halla el menor valor de una fila.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param fila Fila de la cual queremos sacar el menor valor
+	 * @return Menor valor de la fila
+	 * */
 	public int menorEnFila(int[][] matriz, int fila) {
 		int aux=matriz[fila][0];
 		for (int i = 0; i < matriz.length; i++) {
@@ -680,6 +741,12 @@ public class Amadeus {
 		return aux;
 	}
 	
+	/**
+	 * Método que halla las columnas del menor valor de una fila.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param fila Fila de la cual queremos sacar el menor valor
+	 * @return Columnas en las cuales se encuentra el menor valor de la fila
+	 * */
 	public int[] posicionesMenorEnFila(int[][] matriz,int fila) {
 		int aux=menorEnFila(matriz,fila);
 		int cont=0;
@@ -699,6 +766,13 @@ public class Amadeus {
 		return respuesta;
 	}
 	
+	
+	/**
+	 * Método que halla el menor valor de una columna.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param columna Columna de la cual queremos sacar el menor valor
+	 * @return Menor valor de la columna
+	 * */
 	public int menorEnColumna(int[][] matriz, int columna) {
 		int aux=matriz[0][columna];
 		for (int i = 0; i < matriz.length; i++) {
@@ -708,6 +782,13 @@ public class Amadeus {
 		return aux;
 	}
 	
+	
+	/**
+	 * Método que halla las filas del menor valor de una columna.
+	 * @param matriz Matriz de la cual deseamos sacar el valor
+	 * @param columna Columna de la cual queremos sacar el menor valor
+	 * @return Filas en las cuales se encuentra el menor valor de la columna
+	 * */
 	public int[] posicionesMenorEnColumna(int[][] matriz,int columna) {
 		int aux=menorEnColumna(matriz,columna);
 		int cont=0;
@@ -727,4 +808,159 @@ public class Amadeus {
 		return respuesta;
 	}
 	
+	/**
+	 * Método que ordena una fila específica de una matriz de menor a mayor
+	 * @param matriz Matriz de la cual ordenaremos una fila
+	 * @param fila Fila específica que deseamos ordenar
+	 * @return Matriz con la fila ya ordenada
+	 * */
+	public int[][] ordenaFilaMatrizAscendente(int[][] matriz, int fila) throws IOException{
+		if(fila>=matriz.length || fila<0) {
+			System.out.println("Esa fila no existe, introduzca una nueva");
+			fila=controlaIntMinMax(0,matriz.length-1);
+		}
+		int[] arrayAuxiliar=new int[matriz[0].length];
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			arrayAuxiliar[i]=matriz[fila][i];
+		}
+		
+		arrayAuxiliar=ordenacionDirectaAscendenteArray(arrayAuxiliar);
+		
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			matriz[fila][i]=arrayAuxiliar[i];
+		}
+		
+		return matriz;
+	}
+	
+	/**
+	 * Método que ordena una fila específica de una matriz de mayor a menor
+	 * @param matriz Matriz de la cual ordenaremos una fila
+	 * @param fila Fila específica que deseamos ordenar
+	 * @return Matriz con la fila ya ordenada
+	 * */
+	public int[][] ordenaFilaMatrizDescendente(int[][] matriz, int fila) throws IOException{
+		if(fila>=matriz.length || fila<0) {
+			System.out.println("Esa fila no existe, introduzca una nueva");
+			fila=controlaIntMinMax(0,matriz.length-1);
+		}
+		int[] arrayAuxiliar=new int[matriz[0].length];
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			arrayAuxiliar[i]=matriz[fila][i];
+		}
+		
+		arrayAuxiliar=ordenacionDirectaDescendenteArray(arrayAuxiliar);
+		
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			matriz[fila][i]=arrayAuxiliar[i];
+		}
+		
+		return matriz;
+	}
+	
+	
+	/**
+	 * Método que ordena una columna específica de una matriz de menor a mayor
+	 * @param matriz Matriz de la cual ordenaremos una columna
+	 * @param columna Columna específica que deseamos ordenar
+	 * @return Matriz con la columna ya ordenada
+	 * */
+	public int[][] ordenaColumnaMatrizAscendente(int[][] matriz, int columna) throws IOException{
+		if(columna>=matriz[0].length || columna<0) {
+			System.out.println("Esa fila no existe, introduzca una nueva");
+			columna=controlaIntMinMax(0,matriz[0].length-1);
+		}
+		int[] arrayAuxiliar=new int[matriz.length];
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			arrayAuxiliar[i]=matriz[i][columna];
+		}
+		
+		arrayAuxiliar=ordenacionDirectaAscendenteArray(arrayAuxiliar);
+		
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			matriz[i][columna]=arrayAuxiliar[i];
+		}
+		
+		return matriz;
+	}
+	
+	
+	/**
+	 * Método que ordena una columna específica de una matriz de mayor a menor
+	 * @param matriz Matriz de la cual ordenaremos una columna
+	 * @param columna Columna específica que deseamos ordenar
+	 * @return Matriz con la columna ya ordenada
+	 * */
+	public int[][] ordenaColumnaMatrizDescendente(int[][] matriz, int columna) throws IOException{
+		if(columna>=matriz[0].length || columna<0) {
+			System.out.println("Esa fila no existe, introduzca una nueva");
+			columna=controlaIntMinMax(0,matriz[0].length-1);
+		}
+		int[] arrayAuxiliar=new int[matriz.length];
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			arrayAuxiliar[i]=matriz[i][columna];
+		}
+		
+		arrayAuxiliar=ordenacionDirectaDescendenteArray(arrayAuxiliar);
+		
+		for (int i = 0; i < arrayAuxiliar.length; i++) {
+			matriz[i][columna]=arrayAuxiliar[i];
+		}
+		
+		return matriz;
+	}
+	
+	/**
+	 * Método que ordena todas las filas de una matriz de menor a mayor
+	 * @param matriz Matriz de la cual ordenaremos las filas
+	 * @return Matriz con las filas ya ordenadas
+	 * */
+	public int[][] ordenaFilasMatrizAscendente (int[][] matriz) throws IOException{
+		for (int i = 0; i < matriz.length; i++) {
+			matriz=ordenaFilaMatrizAscendente(matriz,i);
+		}
+		
+		return matriz;
+	}
+	
+	
+	/**
+	 * Método que ordena todas las filas de una matriz de mayor a menor
+	 * @param matriz Matriz de la cual ordenaremos las filas
+	 * @return Matriz con las filas ya ordenadas
+	 * */
+	public int[][] ordenaFilasMatrizDescendente (int[][] matriz) throws IOException{
+		for (int i = 0; i < matriz.length; i++) {
+			matriz=ordenaFilaMatrizDescendente(matriz,i);
+		}
+		
+		return matriz;
+	}
+	
+	
+	/**
+	 * Método que ordena todas las columnas de una matriz de menor a mayor
+	 * @param matriz Matriz de la cual ordenaremos las columnas
+	 * @return Matriz con las columnas ya ordenadas
+	 * */
+	public int[][] ordenaColumnasMatrizAscendente (int[][] matriz) throws IOException{
+		for (int i = 0; i < matriz[0].length; i++) {
+			matriz=ordenaColumnaMatrizAscendente(matriz,i);
+		}
+		
+		return matriz;
+	}
+	
+	/**
+	 * Método que ordena todas las columnas de una matriz de mayor a menor
+	 * @param matriz Matriz de la cual ordenaremos las columnas
+	 * @return Matriz con las columnas ya ordenadas
+	 * */
+	public int[][] ordenaColumnasMatrizDescendente (int[][] matriz) throws IOException{
+		for (int i = 0; i < matriz[0].length; i++) {
+			matriz=ordenaColumnaMatrizDescendente(matriz,i);
+		}
+		
+		return matriz;
+	}
 }

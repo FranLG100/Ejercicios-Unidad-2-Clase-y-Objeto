@@ -1086,4 +1086,97 @@ public class Amadeus {
 		}
 		return arrayAuxiliar;
 	}
+	
+	
+	/*/////////////////////////////////////////////////////////////////////*/
+	/*/RECURSIVOS//////////////////////////////////////////////////////////*/
+	/*/////////////////////////////////////////////////////////////////////*/
+	
+	/**
+	 * Método estático que calcula el factorial de un número
+	 * @param num Número entero del cual queremos conocer el factorial
+	 * @return Factorial del número, calculado con este método recursivo
+	 * */
+	public int CalculaFactorial(int num) {
+
+		if(num==0) 
+			return 1;
+		else
+		return num*CalculaFactorial(num-1); //Devuelve el número y el propio método llamándose con la misma  variable -1.
+	}
+	
+	
+	/**
+	 * Método público que calcula la serie de Fibonacci
+	 */
+	public int serieFibonacci(int n) {
+
+		if (n == 0 || n == 1)
+			return n;
+		else {
+			return serieFibonacci(n - 1) + serieFibonacci(n - 2);
+
+		}
+	}
+	
+	
+	/**
+	 * Método público que calcula el triángulo de Tartaglia
+	 *@param i Fila en la cual nos encontramos
+	 *@param j Columna en la cual nos encontramos
+	 * */
+  public int Tartaglia(int i, int j) {
+    if (j == 0 || j == i) {
+      return 1;
+    } else {
+      return Tartaglia(i-1, j-1) + Tartaglia(i-1,j);
+    }
+  }
+  
+	/*/////////////////////////////////////////////////////////////////////*/
+	/*/RECREATIVOS/////////////////////////////////////////////////////////*/
+	/*/////////////////////////////////////////////////////////////////////*/
+  
+  /**
+   * Método público que imprime una matriz en caracol
+   * @param tamanho Tamaño de la matriz caracol.
+   * */
+  public void Caracol (int tamanho) {
+
+		int contador=1; //Contador. Número en el cual empeazamos
+		int principio=0; // Variable inicial, para llevar la cuenta de los límites
+		int fin=tamanho-1; //Variable inicial sobre el final, para llevar la cuenta de los límites
+		int[][] matriz=new int[tamanho][tamanho]; //Matriz cuadrada. 
+		
+		while(contador<=(tamanho*tamanho)) { //Mientras el contador no sea igual al 
+											//cuadrado del tamaño, repite el bucle
+			
+			
+			for (int i = principio; i <= fin; i++) {	//El primer for, va de izda a dcha,
+				matriz[principio][i]=contador++;		//en las filas superiores.
+			}
+			
+			
+			for (int i = principio+1; i <= fin; i++) { //El segundo for, de arriba a abajo, 
+				matriz[i][fin]=contador++;			  //en las columnas a la derecha.
+			}
+			
+			
+			for (int i = fin-1; i >=principio; i--) { //El tercer for, de dcha a izda
+				matriz[fin][i]=contador++;			 //en la filas inferiores.
+			}
+			
+			
+			for (int i = fin-1; i >=principio+1; i--) { //El último for, va de abajo a arriba
+				matriz[i][principio]=contador++;	   //en las columnas de la izquierda
+			}
+			
+			principio++; //Aumentamos el principio en uno, para comenzar uno después
+			fin--; //Reducimos el final para acabar uno antes
+		}
+		
+		imprimeMatriz(matriz);
+  }
+	
+	
 }

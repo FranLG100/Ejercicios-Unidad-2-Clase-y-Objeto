@@ -3,6 +3,7 @@ package utilesFran;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -1177,6 +1178,55 @@ public class Amadeus {
 		
 		imprimeMatriz(matriz);
   }
+  
+	public void PuntoDeSilla(int[][] matriz) {
+
+		int aux; // Variable auxiliar
+		int col; // Variable para guardar la columna
+		ArrayList<Integer> respuestas = new ArrayList<Integer>(); // Para uno de los ejercicios comentados
+		System.out.println("Esta es nuestra matriz");
+		// imprimeMatriz(matriz);
+		System.out.println();
+
+		// System.out.println(amadeus.menorEnFila(matriz, 0));
+
+		// EL MAYOR VALOR DE UNA FILA Y UNA COLUMNA
+		/*
+		 * for (int i = 0; i < matriz.length; i++) { aux = amadeus.mayorEnFila(matriz,
+		 * i); respuestas = amadeus.posicionesMayorEnFila(matriz, i); for (int j = 0; j
+		 * < respuestas.length; j++) { if(aux==amadeus.mayorEnColumna(matriz,
+		 * respuestas[j]))
+		 * System.out.println(aux+", fila "+i+" y columna "+respuestas[j]
+		 * +", es el mayor común"); } }
+		 */
+
+		// OTRA VERSIÓN BUENA, PERO MENOS EFICIENTE
+		/*
+		 * for (int i = 0; i < matriz.length; i++) { for (int j = 0; j <
+		 * matriz[i].length; j++) { if (amadeus.menorEnFila(matriz, i) ==
+		 * amadeus.mayorEnColumna(matriz, j)) { System.out.println(matriz[i][j] +
+		 * "(Posición:[" + i + "," + j + "]" + " es un punto de silla"); } } }
+		 */
+
+		// Para cada fila, buscamos el menor valor existente y guardamos ese valor en un
+		// auxiliar.
+		for (int i = 0; i < matriz.length; i++) {
+			aux = menorEnFila(matriz, i);
+			for (int j = 0; j < matriz[i].length; j++) {
+				if (aux == matriz[i][j]) { // Ahora, si el valor coincide en la fila, bloqueamos la columna y
+											// comprobamos
+					if (aux == mayorEnColumna(matriz, j))
+						System.out.println(matriz[i][j] + "(Posición:[" + i + "," + j + "]" + " es un punto de silla");
+				}
+			}
+		}
+
+	}
+
+
+		
+		 
+
 	
 	
 }

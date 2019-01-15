@@ -1179,6 +1179,11 @@ public class Amadeus {
 		imprimeMatriz(matriz);
   }
   
+  	/**
+  	 * Método público que haya los puntos de silla de una matriz (Los menores números
+  	 * en su fila, pero los mayores en su columna)
+  	 * @param matriz Matriz de la cual queremos hallar los puntos de silla
+  	 * */
 	public void PuntoDeSilla(int[][] matriz) {
 
 		int aux; // Variable auxiliar
@@ -1222,11 +1227,98 @@ public class Amadeus {
 		}
 
 	}
-
-
+	
+	/**
+	 * @param frase Frase/Palabra a comprobar si es o no un palíndromo
+	 * */
+	public void Palindromo (String frase) {
 		
-		 
-
+		//Le pedimos al usuario que escriba una frase.
+		frase=frase.toLowerCase(); //La pasamos a minúsculas.
+		frase=frase.trim(); //Quitamos espacios iniciales o finales si los hubiese. 
+		char[] original=new char[frase.length()];
+		char[] comprobante=new char[frase.length()];
+		original=frase.toCharArray(); //Y a caracteres
+		
+		//Ahora, simplemente pasamos todos esos caracteres a otra variable,
+		//pero en orden inverso al original.
+		for (int i = 0; i < comprobante.length; i++) {
+			comprobante[i]=original[frase.length()-i-1];
+		}
+		
+		//Formamos un String con ese array de caracteres invertido
+		String palindromo=new String(comprobante);
+		
+		//Y comprobamos. Si el string original es igual a este nuevo string de caracteres
+		//invertidos, entonces, es un palíndromo.
+		if(palindromo.equals(frase))
+			System.out.println("Sí es un palíndromo");
+		else
+			System.out.println("No es un palíndromo");
+	}
+	
+	public void CuentaVocales(String sujeto) {
+		int cont=0; //Entero para contar vocales
+		char[] cadena; //En esta variable guardaremos el texto que introduzcamos, pasado a caracteres
+		char[] origen= {'a','e','i','o','u'}; //Caracteres (vocales) con los cuales comparar los caracteres de 'cadena'
+		
+		//Le pedimos al usuario que introduzca el texto que desee
+		
+		//Lo pasamos a minúsculas, y lo convertimos en un array de caracteres
+		sujeto=sujeto.toLowerCase();
+		cadena=sujeto.toCharArray();
+		
+		//Con un For, comparamos cuantos caracteres coinciden con las vocales, 
+		//añadiendo 1 al contador por cada coincidencia
+		for (int i = 0; i < cadena.length; i++) {
+			for (int j = 0; j < origen.length; j++) {
+				if(cadena[i]==origen[j])
+					cont++;
+			}
+		}
+		
+		//Imprimimos nuestra solución
+		System.out.println("En ese texto hay "+cont+" vocales.");
+	}
+	
+	public String EliminaEspaciosBlancos(String frase) {
+		//En este sencillo ejemplo, almacenaremos una frase en el String 'frase'.
+				
+				//A continuación, con 'replaceAll', cambiaremos todos los espacios (//s) por nada.
+				frase=frase.replaceAll("\\s", "");
+				
+				/*Y ya hemos eliminado los espacios en blanco. Con 'trim' podemos eliminar los espacios
+				en blanco que hay delante o detrás de una cadena. En este caso, está hecho para eliminar
+				espacios intermedios.*/
+				return frase;
+	}
+	
+	public void Capicua(int origen) {
+		//Número que usaremos para comprobar
+		int numeroFinal=0;
+		//Convertimos el número a String, y a array de caracteres.
+		char[] aux=Integer.toString(origen).toCharArray();
+		//El comprobante, igual.
+		char[] comprobante=Integer.toString(origen).toCharArray();
+		boolean capicua=false;
+		
+		//Pasamos al comprobante el número al revés
+		for (int i = 0; i < comprobante.length; i++) {
+			comprobante[i]=aux[aux.length-i-1];
+		}
+		
+		//Juntamos el número y lo pasamos a integer
+		numeroFinal=Integer.parseInt(String.valueOf(comprobante));
+		
+		//Comprobamos si es o no capicúa
+		if(numeroFinal==origen)
+			System.out.println("El número es capicúa");
+		else
+			System.out.println("No lo es");
+	}
+	
+	
 	
 	
 }
+	

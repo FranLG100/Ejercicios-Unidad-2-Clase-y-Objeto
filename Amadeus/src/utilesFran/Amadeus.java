@@ -11,7 +11,7 @@ import java.util.Random;
  * Clase de utilidades (control de variables, aplicación de try catch, ...)
  * de uso personal
  * @author Francisco Antonio Lorente Girol
- * @version 1.0
+ * @version 16/01/2019
  * */
 
 public class Amadeus {
@@ -1257,10 +1257,14 @@ public class Amadeus {
 			System.out.println("No es un palíndromo");
 	}
 	
+	/**
+	 * Método que cuenta las vocales de una cadena de caracteres.
+	 * @param sujeto Frase a comprobar el número de vocales
+	 * */
 	public void CuentaVocales(String sujeto) {
 		int cont=0; //Entero para contar vocales
 		char[] cadena; //En esta variable guardaremos el texto que introduzcamos, pasado a caracteres
-		char[] origen= {'a','e','i','o','u'}; //Caracteres (vocales) con los cuales comparar los caracteres de 'cadena'
+		char[] origen= {'a','e','i','o','u', 'á','é','í','ó','ú','à','è','ì','ò','ù','ä','ë','ï','ö','ü','â','ê','î','ô','û'}; //Caracteres (vocales) con los cuales comparar los caracteres de 'cadena'
 		
 		//Le pedimos al usuario que introduzca el texto que desee
 		
@@ -1281,6 +1285,10 @@ public class Amadeus {
 		System.out.println("En ese texto hay "+cont+" vocales.");
 	}
 	
+	/**
+	 * Método que elimina los espacios en blanco de una frase
+	 * @param frase Frase de la cual eliminar los espacios en blanco
+	 * */
 	public String EliminaEspaciosBlancos(String frase) {
 		//En este sencillo ejemplo, almacenaremos una frase en el String 'frase'.
 				
@@ -1293,6 +1301,10 @@ public class Amadeus {
 				return frase;
 	}
 	
+	/**
+	 * Método que comprueba si un número es o no capicúa
+	 * @param origen Número a comprobar si es capicúa o no
+	 * */
 	public void Capicua(int origen) {
 		//Número que usaremos para comprobar
 		int numeroFinal=0;

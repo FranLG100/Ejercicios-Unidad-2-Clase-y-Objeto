@@ -1204,10 +1204,10 @@ public class Amadeus {
   /**
    * Método público que imprime una matriz en caracol
    * @param tamanho Tamaño de la matriz caracol.
+   * @param contador Número inicial por el cual empieza la Matriz Caracol
    * */
-  public void Caracol (int tamanho) {
+  public void Caracol (int tamanho, int contador) {
 
-		int contador=1; //Contador. Número en el cual empeazamos
 		int principio=0; // Variable inicial, para llevar la cuenta de los límites
 		int fin=tamanho-1; //Variable inicial sobre el final, para llevar la cuenta de los límites
 		int[][] matriz=new int[tamanho][tamanho]; //Matriz cuadrada. 

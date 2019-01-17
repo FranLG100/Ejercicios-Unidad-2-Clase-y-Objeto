@@ -1120,6 +1120,16 @@ public class Amadeus {
 		}
 	}
 	
+	/**
+	 * Método público que imprime la serie de Fibonacci
+	 * @param limite Hasta qué número se imprime la serie de Fibonacci
+	 * */
+	public void imprimeSerieFibonacci(int limite) {
+		for (int i = 0; i < limite; i++) {
+		System.out.print(serieFibonacci(i)+" ");
+		}
+	}
+	
 	
 	/**
 	 * Método público que calcula el triángulo de Tartaglia
@@ -1132,6 +1142,22 @@ public class Amadeus {
     } else {
       return Tartaglia(i-1, j-1) + Tartaglia(i-1,j);
     }
+  }
+  
+  /**
+   * Método público que imprime el triángulo de Tartaglia/Pascal
+   * @param tamanho Cuantas filas se desea realizar del Tríangulo de Tartaglia
+   * */
+  public void imprimeTartaglia(int tamanho) {
+	    for (int i = 0; i < tamanho; i++) {
+	      for (int k = 0; k < tamanho - i; k++) {
+	        System.out.print(" ");
+	      }
+	      for (int j = 0; j <= i; j++) {
+	        System.out.print(Tartaglia(i, j) + " ");
+	      }
+	      System.out.println();
+	    }
   }
   
 	/*/////////////////////////////////////////////////////////////////////*/

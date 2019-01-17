@@ -1088,6 +1088,43 @@ public class Amadeus {
 		return arrayAuxiliar;
 	}
 	
+	/**
+	 * Método público que inserta una fila en una matriz, indicando la posición inicial
+	 * @param posX Posición Y del hueco de la matriz
+	 * @param posY Posición Y del hueco de la matriz
+	 * @param array Fila que deseamos insertar
+	 * @param matriz Matriz en la cual deseamos insertar la fila
+	 * */
+	public int[][] insertaFila(int posX, int posY, int[] array,int[][] matriz) {
+		if(matriz[0].length-posY>=array.length) {
+			for (int i = 0; i < array.length; i++) {
+				matriz[posX][posY+i]=array[i];
+			}
+		}else {
+			System.out.println("Esa Fila no cabe en esa posición");
+		}
+		return matriz;
+	}
+	
+	/**
+	 * Método público que inserta una columna en una matriz, indicando la posición inicial
+	 * @param posX Posición Y del hueco de la matriz
+	 * @param posY Posición Y del hueco de la matriz
+	 * @param array Columna que deseamos insertar
+	 * @param matriz Matriz en la cual deseamos insertar la columna
+	 * */
+	public int[][] insertaColumna(int posX, int posY, int[] array,int[][] matriz) {
+		if(matriz.length-posX>=array.length) {
+			for (int i = 0; i < array.length; i++) {
+				matriz[posX+i][posY]=array[i];
+			}
+		}else {
+			System.out.println("Esa Columna no cabe en esa posición");
+		}
+		return matriz;
+	}
+	
+	
 	
 	/*/////////////////////////////////////////////////////////////////////*/
 	/*/RECURSIVOS//////////////////////////////////////////////////////////*/
@@ -1175,7 +1212,7 @@ public class Amadeus {
 		int fin=tamanho-1; //Variable inicial sobre el final, para llevar la cuenta de los límites
 		int[][] matriz=new int[tamanho][tamanho]; //Matriz cuadrada. 
 		
-		while(contador<=(tamanho*tamanho)) { //Mientras el contador no sea igual al 
+		for (int j = 0; j <=tamanho/2; j++) { //Mientras el contador no sea igual al 
 											//cuadrado del tamaño, repite el bucle
 			
 			

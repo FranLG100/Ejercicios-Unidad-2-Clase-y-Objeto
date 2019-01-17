@@ -11,7 +11,7 @@ import java.util.Random;
  * Clase de utilidades (control de variables, aplicación de try catch, ...)
  * de uso personal
  * @author Francisco Antonio Lorente Girol
- * @version 16/01/2019
+ * @version 17/01/2019
  * */
 
 public class Amadeus {
@@ -511,6 +511,49 @@ public class Amadeus {
 		}
 		return array;
 	}
+	
+	public int cuentaPares(int[] array) {
+		int cont=0;
+		for (int i = 0; i < array.length; i++) {
+			if(array[i]%2==0)
+				cont++;
+		}
+		return cont;
+	}
+	
+	public int cuentaImpares(int[] array) {
+		int cont=0;
+		for (int i = 0; i < array.length; i++) {
+			if(array[i]%2!=0)
+				cont++;
+		}
+		return cont;
+	}
+	
+	public int[] extraeParesArray(int[] array) {
+		int[] pares=new int[cuentaPares(array)];
+		int cont=0;
+		for (int i = 0; cont < pares.length; i++) {
+			if(array[i]%2==0) {
+				pares[cont]=array[i];
+				cont++;
+			}
+		}
+		return pares;
+	}
+	
+	public int[] extraeImparesArray(int[] array) {
+		int[] impares=new int[cuentaImpares(array)];
+		int cont=0;
+		for (int i = 0; cont < impares.length; i++) {
+			if(array[i]%2!=0) {
+				impares[cont]=array[i];
+				cont++;
+			}
+		}
+		return impares;
+	}
+	
 	
 	/*/////////////////////////////////////////////////////////////////////*/
 	/*/MATRICES////////////////////////////////////////////////////////////*/
@@ -1135,12 +1178,12 @@ public class Amadeus {
 	 * @param num Número entero del cual queremos conocer el factorial
 	 * @return Factorial del número, calculado con este método recursivo
 	 * */
-	public int CalculaFactorial(int num) {
+	public int calculaFactorial(int num) {
 
 		if(num==0) 
 			return 1;
 		else
-		return num*CalculaFactorial(num-1); //Devuelve el número y el propio método llamándose con la misma  variable -1.
+		return num*calculaFactorial(num-1); //Devuelve el número y el propio método llamándose con la misma  variable -1.
 	}
 	
 	
@@ -1247,7 +1290,7 @@ public class Amadeus {
   	 * en su fila, pero los mayores en su columna)
   	 * @param matriz Matriz de la cual queremos hallar los puntos de silla
   	 * */
-	public void PuntoDeSilla(int[][] matriz) {
+	public void puntoDeSilla(int[][] matriz) {
 
 		int aux; // Variable auxiliar
 		int col; // Variable para guardar la columna
@@ -1352,7 +1395,7 @@ public class Amadeus {
 	 * Método que elimina los espacios en blanco de una frase
 	 * @param frase Frase de la cual eliminar los espacios en blanco
 	 * */
-	public String EliminaEspaciosBlancos(String frase) {
+	public String eliminaEspaciosBlancos(String frase) {
 		//En este sencillo ejemplo, almacenaremos una frase en el String 'frase'.
 				
 				//A continuación, con 'replaceAll', cambiaremos todos los espacios (//s) por nada.

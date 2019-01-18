@@ -7,13 +7,13 @@ public class Pruebas {
 
 		Amadeus amadeus=new Amadeus();
 		int cont=0;
-		int[] array=amadeus.creaArrayLleno(20, 99);
+		int[] array=amadeus.creaArrayLleno(10, 99);
 		amadeus.imprimeArray(array);
 		int[] pares=amadeus.extraeParesArray(array);
 		int[] impares=amadeus.extraeImparesArray(array);
 		
-		pares=amadeus.ordenacionDirectaAscendenteArray(pares);
-		impares=amadeus.ordenacionDirectaDescendenteArray(impares);
+		pares=amadeus.ordenacionSeleccionDirectaAscendenteArray(pares);
+		impares=amadeus.ordenacionSeleccionDirectaDescendenteArray(impares);
 		
 		for (int i = 0; i < pares.length; i++) {
 			array[cont]=pares[i];

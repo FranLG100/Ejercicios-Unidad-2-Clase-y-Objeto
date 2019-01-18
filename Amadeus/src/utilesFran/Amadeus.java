@@ -11,7 +11,7 @@ import java.util.Random;
  * Clase de utilidades (control de variables, aplicación de try catch, ...)
  * de uso personal
  * @author Francisco Antonio Lorente Girol
- * @version 17/01/2019
+ * @version 18/01/2019
  * */
 
 public class Amadeus {
@@ -476,7 +476,7 @@ public class Amadeus {
 	 * @param array Array que deseamos ordenar
 	 * @return Array ya ordenado
 	 * */
-	public int[] ordenacionDirectaAscendenteArray(int[] array) {
+	public int[] ordenacionInsercionDirectaAscendenteArray(int[] array) {
 		int index=0;
 		int aux=0;
 		for (int i = 1; i < array.length; i++) {
@@ -497,7 +497,7 @@ public class Amadeus {
 	 * @param array Array que deseamos ordenar
 	 * @return Array ya ordenado
 	 * */
-	public int[] ordenacionDirectaDescendenteArray(int[] array) {
+	public int[] ordenacionInsercionDirectaDescendenteArray(int[] array) {
 		int index=0;
 		int aux=0;
 		for (int i = 1; i < array.length; i++) {
@@ -512,6 +512,73 @@ public class Amadeus {
 		return array;
 	}
 	
+	
+	/**
+	 * Método que ordena de mayor a menor un array mediante el método de Selección Directa.
+	 * @param array Array que deseamos ordenar
+	 * @return Array ya ordenado
+	 * */
+	public int[] ordenacionSeleccionDirectaAscendenteArray(int[] array) {
+
+		// El tamaño del array
+		int n = array.length;
+		// las n-1 pasadas. En la primera pasada i=0, y en la última i=n-2
+		for (int i = 0; i < n - 1; i++) {
+			// Buscamos el mínimo supondremos que es el primero
+			int posMin = i;
+			// nos movemos por el resto
+			for (int j = i + 1; j < n; j++) {
+				// si este es menor aun
+				if (array[j] < array[posMin]) {
+					// tomamos nota de su posición
+					posMin = j;
+				}
+			}
+			// intercambiar la posición i y el mínimo encontrado
+			int iaux = array[i];
+			array[i] = array[posMin];
+			array[posMin] = iaux;
+		}
+		
+		return array;
+	}
+	
+	
+	/**
+	 * Método que ordena de menor a mayor un array mediante el método de Selección Directa.
+	 * @param array Array que deseamos ordenar
+	 * @return Array ya ordenado
+	 * */
+	public int[] ordenacionSeleccionDirectaDescendenteArray(int[] array) {
+
+		// El tamaño del array
+		int n = array.length;
+		// las n-1 pasadas. En la primera pasada i=0, y en la última i=n-2
+		for (int i = 0; i < n - 1; i++) {
+			// Buscamos el mínimo supondremos que es el primero
+			int posMin = i;
+			// nos movemos por el resto
+			for (int j = i + 1; j < n; j++) {
+				// si este es menor aun
+				if (array[j] > array[posMin]) {
+					// tomamos nota de su posición
+					posMin = j;
+				}
+			}
+			// intercambiar la posición i y el mínimo encontrado
+			int iaux = array[i];
+			array[i] = array[posMin];
+			array[posMin] = iaux;
+		}
+		
+		return array;
+	}
+	
+	/**
+	 * Método público que cuenta el número de números pares de un array introducido
+	 * @param array Array del cual queremos contar la cantidad de números pares
+	 * @return Cantidad de números pares que hay en ese array
+	 * */
 	public int cuentaPares(int[] array) {
 		int cont=0;
 		for (int i = 0; i < array.length; i++) {
@@ -521,6 +588,12 @@ public class Amadeus {
 		return cont;
 	}
 	
+	
+	/**
+	 * Método público que cuenta el número de números impares de un array introducido
+	 * @param array Array del cual queremos contar la cantidad de números impares
+	 * @return Cantidad de números impares que hay en ese array
+	 * */
 	public int cuentaImpares(int[] array) {
 		int cont=0;
 		for (int i = 0; i < array.length; i++) {
@@ -530,6 +603,12 @@ public class Amadeus {
 		return cont;
 	}
 	
+	
+	/**
+	 * Método público que extrae los números pares de un array y los guarda en otro
+	 * @param array Array del cual queremos extraer los números pares
+	 * @return Un array de números pares
+	 * */
 	public int[] extraeParesArray(int[] array) {
 		int[] pares=new int[cuentaPares(array)];
 		int cont=0;
@@ -542,6 +621,12 @@ public class Amadeus {
 		return pares;
 	}
 	
+	
+	/**
+	 * Método público que extrae los números impares de un array y los guarda en otro
+	 * @param array Array del cual queremos extraer los números impares
+	 * @return Un array de números impares
+	 * */
 	public int[] extraeImparesArray(int[] array) {
 		int[] impares=new int[cuentaImpares(array)];
 		int cont=0;
@@ -868,7 +953,7 @@ public class Amadeus {
 			arrayAuxiliar[i]=matriz[fila][i];
 		}
 		
-		arrayAuxiliar=ordenacionDirectaAscendenteArray(arrayAuxiliar);
+		arrayAuxiliar=ordenacionInsercionDirectaAscendenteArray(arrayAuxiliar);
 		
 		for (int i = 0; i < arrayAuxiliar.length; i++) {
 			matriz[fila][i]=arrayAuxiliar[i];
@@ -893,7 +978,7 @@ public class Amadeus {
 			arrayAuxiliar[i]=matriz[fila][i];
 		}
 		
-		arrayAuxiliar=ordenacionDirectaDescendenteArray(arrayAuxiliar);
+		arrayAuxiliar=ordenacionInsercionDirectaDescendenteArray(arrayAuxiliar);
 		
 		for (int i = 0; i < arrayAuxiliar.length; i++) {
 			matriz[fila][i]=arrayAuxiliar[i];
@@ -919,7 +1004,7 @@ public class Amadeus {
 			arrayAuxiliar[i]=matriz[i][columna];
 		}
 		
-		arrayAuxiliar=ordenacionDirectaAscendenteArray(arrayAuxiliar);
+		arrayAuxiliar=ordenacionInsercionDirectaAscendenteArray(arrayAuxiliar);
 		
 		for (int i = 0; i < arrayAuxiliar.length; i++) {
 			matriz[i][columna]=arrayAuxiliar[i];
@@ -945,7 +1030,7 @@ public class Amadeus {
 			arrayAuxiliar[i]=matriz[i][columna];
 		}
 		
-		arrayAuxiliar=ordenacionDirectaDescendenteArray(arrayAuxiliar);
+		arrayAuxiliar=ordenacionInsercionDirectaDescendenteArray(arrayAuxiliar);
 		
 		for (int i = 0; i < arrayAuxiliar.length; i++) {
 			matriz[i][columna]=arrayAuxiliar[i];

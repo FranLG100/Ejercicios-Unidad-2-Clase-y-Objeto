@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.StringTokenizer;
 
 /**
  * Clase de utilidades (control de variables, aplicación de try catch, ...)
@@ -332,6 +333,39 @@ public class Amadeus {
 			}
 		} while (error);
 		return respuesta;
+	}
+	
+	/**
+	 * Convierte una cadena de caracteres en un String
+	 * @param array Array de caracteres con el cual queremos formar una palabra
+	 * @return Frase o palabra ya formada
+	 * */
+	public String deCadenaATexto(char[] array) {
+		String string=String.copyValueOf(array);
+		return string;
+	}
+	
+	/**
+	 * Divide un texto mediante unas reglas determinadas
+	 * @param texto Texto a dividir
+	 * @param reglas Por qué elementos debe ser separado
+	 * @return Array de palabras ya separadas
+	 * */
+	public String[] divideTexto(String texto, String reglas) {
+		String[] palabras=texto.split(reglas);
+		return palabras;
+	}
+	
+	/**
+	 * Divide un texto mediante unas reglas determinadas y lo guarda 
+	 * en un StringTokenizer
+	 * @param texto Texto a dividir
+	 * @param reglas Por qué elementos debe ser separado
+	 * @return StringTokenizer cargado.
+	 * */
+	public StringTokenizer cargaTokenizer(String texto, String reglas) {
+		StringTokenizer tokens=new StringTokenizer(texto,reglas);
+		return tokens;
 	}
 	
 	/*/////////////////////////////////////////////////////////////////////*/

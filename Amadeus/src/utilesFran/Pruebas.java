@@ -8,10 +8,15 @@ public class Pruebas {
 		// TODO Auto-generated method stub
 
 		Amadeus amadeus = new Amadeus();
-		StringTokenizer token=amadeus.cargaTokenizer("Esto es una prueba","e");
-
-	while(token.hasMoreTokens()) {
-		System.out.println(token.nextToken());
-	}
-	}
+		int[][] matriz=amadeus.creaMatriz(6, 6, 9);
+		int[] array=amadeus.creaArrayLleno(4, 9);
+		amadeus.imprimeMatriz(matriz);
+		System.out.println();
+		amadeus.imprimeArray(array);
+		System.out.println();
+		System.out.println();
+		matriz=amadeus.insertaDiagonal(2, 3, array, matriz);
+		amadeus.imprimeMatriz(matriz);
+		
+}
 }

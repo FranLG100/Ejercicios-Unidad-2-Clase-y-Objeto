@@ -1286,6 +1286,23 @@ public class Amadeus {
 		return matriz;
 	}
 	
+	/**
+	 * Método público que inserta una diagonal en una matriz, indicando la posición inicial
+	 * @param posX Posición Y del hueco de la matriz
+	 * @param posY Posición Y del hueco de la matriz
+	 * @param array Diagonal que deseamos insertar
+	 * @param matriz Matriz en la cual deseamos insertar la diagonal
+	 * */
+	public int[][] insertaDiagonal(int posX, int posY, int[] array,int[][] matriz) {
+		if((matriz.length-posX>=array.length) && (matriz[0].length-posY>=array.length) ) {
+			for (int i = 0; i < array.length; i++) {
+				matriz[posX+i][posY+i]=array[i];
+			}
+		}else {
+			System.out.println("Esa Diagonal no cabe en esa posición");
+		}
+		return matriz;
+	}
 	
 	
 	/*/////////////////////////////////////////////////////////////////////*/

@@ -11,7 +11,7 @@ import java.util.Random;
  * Clase de utilidades (control de variables, aplicación de try catch, ...)
  * de uso personal
  * @author Francisco Antonio Lorente Girol
- * @version 18/01/2019
+ * @version 20/01/2019
  * */
 
 public class Amadeus {
@@ -1378,11 +1378,7 @@ public class Amadeus {
 	public void puntoDeSilla(int[][] matriz) {
 
 		int aux; // Variable auxiliar
-		int col; // Variable para guardar la columna
-		ArrayList<Integer> respuestas = new ArrayList<Integer>(); // Para uno de los ejercicios comentados
-		System.out.println("Esta es nuestra matriz");
 		// imprimeMatriz(matriz);
-		System.out.println();
 
 		// System.out.println(amadeus.menorEnFila(matriz, 0));
 
@@ -1417,6 +1413,53 @@ public class Amadeus {
 			}
 		}
 
+	}
+	
+	/**
+	 * Método público que extrae un punto de silla de una matriz, junto con 
+	 * sus coordenadas.
+	 * @param matriz Matriz de la cual queremos extraer el punto de silla
+	 * @return Array con la siguiente estructura [puntoDeSilla, coordenadaI, coordenadaJ, puntoDeSilla, coordenadaI, coordenadaJ,...]
+	 * */
+	public int[] extraerPuntoDeSilla(int[][] matriz) {
+		int aux; // Variable auxiliar
+		int cont = 0; // Variable para contar los puntos de silla
+		int[] array; // Aquí guardaremos los puntos de silla y sus posiciones
+
+		for (int i = 0; i < matriz.length; i++) {
+			aux = menorEnFila(matriz, i);
+			for (int j = 0; j < matriz[i].length; j++) {
+				if (aux == matriz[i][j]) { // Ahora, si el valor coincide en la fila, bloqueamos la columna y
+											// comprobamos
+					if (aux == mayorEnColumna(matriz, j)) {
+						System.out.println(matriz[i][j] + "(Posición:[" + i + "," + j + "]" + " es un punto de silla");
+						cont++;
+					}
+				}
+			}
+		}
+
+		array = new int[cont * 3]; // Le damos tamaño al array
+		cont = 0;
+
+		for (int i = 0; i < matriz.length; i++) {
+			aux = menorEnFila(matriz, i);
+			for (int j = 0; j < matriz[i].length; j++) {
+				if (aux == matriz[i][j]) { // Ahora, si el valor coincide en la fila, bloqueamos la columna y
+											// comprobamos
+					if (aux == mayorEnColumna(matriz, j)) {
+						array[cont] = aux;
+						cont++;
+						array[cont] = i;
+						cont++;
+						array[cont] = j;
+						cont++;
+					}
+				}
+			}
+		}
+
+		return array;
 	}
 	
 	/**

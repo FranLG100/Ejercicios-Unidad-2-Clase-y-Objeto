@@ -5,30 +5,21 @@ public class Pruebas {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Amadeus amadeus=new Amadeus();
-		int cont=0;
-		int[] array=amadeus.creaArrayLleno(10, 99);
-		amadeus.imprimeArray(array);
-		int[] pares=amadeus.extraeParesArray(array);
-		int[] impares=amadeus.extraeImparesArray(array);
-		
-		pares=amadeus.ordenacionSeleccionDirectaAscendenteArray(pares);
-		impares=amadeus.ordenacionSeleccionDirectaDescendenteArray(impares);
-		
-		for (int i = 0; i < pares.length; i++) {
-			array[cont]=pares[i];
+		Amadeus amadeus = new Amadeus();
+		int cont = 0;
+		int[][] matriz = { { 2, 8, 4, 8 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 2, 3, 3, 3 } };
+		System.out.println("Nuestra matriz");
+		amadeus.imprimeMatriz(matriz);
+		amadeus.puntoDeSilla(matriz);
+		int[] array=amadeus.extraerPuntoDeSilla(matriz);
+		while(cont<array.length) {
+			System.out.println(array[cont]+ " es un punto de silla");
+			cont++;
+			System.out.println("En la posición: "+array[cont]);
+			cont++;
+			System.out.println("Y en la posición: "+array[cont]);
 			cont++;
 		}
-		
-		for (int i = 0; i < impares.length; i++) {
-			array[cont]=impares[i];
-			cont++;
-		}
-		
-		System.out.println();
-		amadeus.imprimeArray(array);
-		
 		
 	}
-
 }

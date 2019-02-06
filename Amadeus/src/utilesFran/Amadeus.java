@@ -332,6 +332,40 @@ public class Amadeus {
 				respuesta = entrada.readLine();
 			}
 		} while (error);
+		return respuesta.toUpperCase();
+	}
+	
+	/**
+	 * Método que comprueba que el teléfono tenga el formato adecuado de 9 dígitos
+	 * @param s Teléfono a comprobar
+	 * @return Teléfono validado
+	 * */
+	public String compruebaTlf(String s) throws IOException {
+		String respuesta=s;
+		respuesta=respuesta.trim().replaceAll("\\s", "");
+		boolean error = false;
+		char c;
+		
+		do {
+			error=false;
+			while(respuesta.length()!=9) {
+				System.out.println("Longitud del teléfono incorrecta, vuelva a introducirlo");
+				respuesta=recibeTexto();
+				respuesta=respuesta.trim().replaceAll("\\s", "");
+			}
+			for (int i = 0; i < 9; i++) {
+				c = respuesta.charAt(i);
+				if (!Character.isDigit(c)) {
+					error = true;
+					break;
+				}
+			}
+			if (error) {
+				System.out.println("Teléfono no válido. Vuélvalo a introducir");
+				respuesta = entrada.readLine();
+				respuesta=respuesta.trim().replaceAll("\\s", "");
+			}
+		} while (error);
 		return respuesta;
 	}
 	

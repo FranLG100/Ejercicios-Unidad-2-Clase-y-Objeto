@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="etiSolicitud" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
+                          <Component id="panelDatosPedido" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="403" max="32767" attributes="0"/>
+                              <Component id="btnDesglose" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="panelFichaPedido" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <Component id="etiSolicitud" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="panelFichaPedido" max="32767" attributes="0"/>
+                  <Component id="panelDatosPedido" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnDesglose" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAceptar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="etiSolicitud">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="SOLUCITUD DE PEDIDO"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JPanel" name="panelDatosPedido">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Datos del Pedido">
+              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </TitledBorder>
+          </Border>
+        </Property>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+        <Property name="opaque" type="boolean" value="false"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="etiDGastoEnvio" alignment="0" max="32767" attributes="0"/>
+                      <Component id="etiDDescuento" alignment="0" max="32767" attributes="0"/>
+                      <Component id="etiDPrecio" alignment="0" max="32767" attributes="0"/>
+                      <Component id="etiDUnidades" alignment="0" max="32767" attributes="0"/>
+                      <Component id="etiDArticulo" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtDArticulo" max="32767" attributes="0"/>
+                      <Component id="txtDUnidades" max="32767" attributes="0"/>
+                      <Component id="txtDPrecio" max="32767" attributes="0"/>
+                      <Component id="txtDGastosEnvio" max="32767" attributes="0"/>
+                      <Component id="txtDDescuento" pref="309" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="20" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiDArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiDUnidades" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDUnidades" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiDPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiDGastoEnvio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDGastosEnvio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="etiDDescuento" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDDescuento" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="etiDArticulo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Articulo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiDUnidades">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Unidades:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiDPrecio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Precio:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiDGastoEnvio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gastos de Env&#xed;o:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiDDescuento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="% Descuento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDArticulo">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDUnidades">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDPrecio">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDGastosEnvio">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDDescuento">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="panelFichaPedido">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Ficha del Pedido">
+              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                <EtchetBorder/>
+              </Border>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="etiFArticulo" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtFArticulo" min="-2" pref="309" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="etiTotalMasIva" alignment="1" max="32767" attributes="0"/>
+                              <Component id="etiTotalSinIva" alignment="1" max="32767" attributes="0"/>
+                              <Component id="etiFGastosEnvio" alignment="1" max="32767" attributes="0"/>
+                              <Component id="etiFUnidades" alignment="0" max="32767" attributes="0"/>
+                              <Component id="etiFPrecio" alignment="0" max="32767" attributes="0"/>
+                              <Component id="etiIva" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtFGastosEnvio" alignment="1" min="-2" pref="309" max="-2" attributes="0"/>
+                                  <Component id="txtFTotalSinIva" alignment="1" min="-2" pref="309" max="-2" attributes="0"/>
+                                  <Component id="txtFTotalMasIva" alignment="1" min="-2" pref="309" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="txtFUnidades" alignment="0" min="-2" pref="309" max="-2" attributes="0"/>
+                              <Component id="txtFPrecio" min="-2" pref="309" max="-2" attributes="0"/>
+                              <Component id="txtFIva" alignment="1" min="-2" pref="309" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="etiTotalPedido" max="32767" attributes="0"/>
+                              <Component id="etiFDescuento" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtFTotalPedido" alignment="1" min="-2" pref="309" max="-2" attributes="0"/>
+                              <Component id="txtFDescuento" alignment="1" min="-2" pref="309" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiFArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFArticulo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtFUnidades" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="etiFUnidades" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiFPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFPrecio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiFGastosEnvio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFGastosEnvio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiTotalSinIva" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFTotalSinIva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiIva" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFIva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiTotalMasIva" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFTotalMasIva" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiFDescuento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFDescuento" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="etiTotalPedido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFTotalPedido" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="etiFArticulo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Articulo:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiFUnidades">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Unidades:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiFPrecio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Precio:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiFGastosEnvio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gastos de Env&#xed;o:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiTotalSinIva">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Total sin IVA:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiIva">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="IVA:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiTotalMasIva">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Total mas IVA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiFDescuento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Descuento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="etiTotalPedido">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TOTAL PEDIDO:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFArticulo">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFUnidades">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFPrecio">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFGastosEnvio">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFTotalSinIva">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFIva">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFTotalMasIva">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFDescuento">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFTotalPedido">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btnDesglose">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver desglose"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDesgloseActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnAceptar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Aceptar Pedido"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAceptarActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

@@ -1,0 +1,6 @@
+Hello-Hola
+Bye-Adios
+House-Casa
+Window-Ventana
+Dog-Perro
+Cat-Gato
